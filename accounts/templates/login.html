@@ -28,7 +28,7 @@
     </nav>
     <h1>Welcome (Login Page)</h1>
     <p>To the something something something e-store</p>
-    <!-- Modal Message -->
+    <!-- Modal Message for logout -->
     {% if messages %}
     <div class="container">
         <div class="row">
@@ -56,12 +56,14 @@
 
         </div>
     </div>
-    <!-- Test Message for logging out -->
+    <!-- Test Message for logging out / logging in -->
     {% for message in messages %}
     {{ message }}
     {% endfor %}
 
     {% endif %}
+
+
     <!-- Modal for Login Form -->
     <div class="container">
         <div class="row">
@@ -76,22 +78,20 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    {{ login_form }}
-                                </div>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {{ login_form }}
+                                <button type="submit">Login</button>
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"
-                                method="">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+ 
 
 
 
