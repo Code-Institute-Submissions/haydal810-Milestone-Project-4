@@ -16,8 +16,8 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Register</a></li>
             <li><a href="#">Login</a></li>
-            <li><a href="{% url 'logout' %}" class="" data-toggle="modal"
-                    data-target="#staticBackdrop">Logout</a></li>
+            <!-- Logout Nav Item Modal Action button -->
+            <li><a href="{% url 'logout' %}" class="" data-toggle="modal" data-target="#staticBackdrop">Logout</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Shop</a></li>
             <li><a href="#">MyCart</a></li>
@@ -26,17 +26,11 @@
         </ul>
     </nav>
     <h1>Welcome</h1>
-    <p>To Irelands authentic Aran Sweater e-store</p>
+    <p>To something something something e-store</p>
     <!-- Modal Message -->
+    {% if messages %}
     <div class="container">
         <div class="row">
-            <!-- Button trigger modal -->
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                Launch static modal button
-            </button> -->
-
-            <!-- Modal -->
-            {% if messages %}
             <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -59,9 +53,10 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
+
         </div>
     </div>
+    {% endif %}
 
 
 
@@ -83,6 +78,8 @@
 
 
 </body>
+
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>

@@ -12,3 +12,4 @@ def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully logged out")
     return redirect(reverse('index'))
+    
