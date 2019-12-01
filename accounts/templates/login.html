@@ -1,56 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>e-Store | User Login</title>
-</head>
+{% block page_title %}eStore | Login Page{% endblock %}
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Register</a></li>
-            <!-- Login Nav Item Modal Action button -->
-            <li><a href="{% url 'login' %}" class="" data-toggle="modal" data-target="#login_modal">Login</a></li>
-            <!-- Logout Nav Item Modal Action button -->
-            <li><a href="{% url 'logout' %}" class="" data-toggle="modal" data-target="#logout_modal">Logout</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">MyCart</a></li>
-            <li><a href="#">Item Reviews</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <h1>Welcome (Login Page)</h1>
-    <p>To the something something something e-store</p>
+{% block page_heading %}User Page{% endblock %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
-
-
-
-</html>
+{% block content %}
+<!-- Modal for Login Form -->
+<div class="container">
+    <div class="row">
+        <div class="modal fade" id="login_modal" data-backdrop="static" tabindex="-1" role="dialog"
+            aria-labelledby="login_modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="login_modalLabel">e-Store says:</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ login_form }}
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
