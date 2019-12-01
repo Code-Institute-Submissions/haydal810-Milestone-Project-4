@@ -7,8 +7,6 @@
 </head>
 
 <body>
-    <h1>{% block page_heading %}{% endblock %}</h1>
-
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
@@ -24,6 +22,8 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
+
+    <h1>{% block page_heading %}{% endblock %}</h1>
 
     <!-- Modal Message for logout -->
     {% if messages %}
