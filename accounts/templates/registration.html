@@ -7,5 +7,9 @@
 {% block content %}
 <p>Already have an account? Login <a href="{% url 'login' %}">HERE</a></p>
 <br>
-<p>Registration to go here:</p>
+<form method="POST">
+    {% csrf_token %}
+    {{ registration_form.as_p }}
+    <button type="submit">Register</button>
+</form>
 {% endblock %}
