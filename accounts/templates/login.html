@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
-
+<!-- Page title here -->
 {% block page_title %}eStore | Login Page{% endblock %}
-
+<!-- Page heading here -->
 {% block page_heading %}User Page{% endblock %}
-
+<!-- Login block content here -->
 {% block content %}
-<!-- Modal for Login Form -->
+<!-- Login Form -->
 <form method="POST">
     {% csrf_token %}
     {{ login_form }}
     <button type="submit">Login</button>
 </form>
+
+<p><a href="{% url 'password_reset' %}">Reset Password</a></p>
 {% endblock %}

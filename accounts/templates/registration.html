@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!-- Page title here -->
+{% block page_title %}eStore | Registration {% endblock %}
+<!-- Page heading here -->
+{% block page_heading %}Register here{% endblock %}
+<!-- Registration Block Content here -->
+{% block content %}
+<p>Already have an account? Login <a href="{% url 'login' %}">HERE</a></p>
+<br>
+<form method="POST">
+    {% csrf_token %}
+    {{ registration_form.as_p }}
+    <button type="submit">Register</button>
+</form>
+{% endblock %}
