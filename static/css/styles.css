@@ -1,0 +1,23 @@
+/* Customised CSS  */
+
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
+.bg_container {
+    background: url("/static/img/bg1.jpg") no-repeat center center fixed;
+    background-color: #2ecc71;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0.5;
+    
+}
+
+.container {
+    z-index: 10;
+}
