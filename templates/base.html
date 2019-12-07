@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <html>
 
 <head>
@@ -7,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 
@@ -43,29 +45,29 @@
                     <a class="nav-link" href="{% url 'registration' %}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-link" href="{% url 'login' %}" >Login</a>
                 </li>
                 {% endif %}
             </ul>
             <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Shop</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">MyCart</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Product Reviews</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'admin:index' %}">Site Owner Login</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MyCart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Product Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:index' %}">Site Owner Login</a>
+                </li>
             </ul>
         </div>
         <!-- Collapsible content -->
@@ -87,8 +89,7 @@
     {% endif %}
 
     {% block content %}
-    {% endblock %}
-
+    {% endblock %}    
 </body>
 
 <!-- Optional JavaScript -->
@@ -102,6 +103,18 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+<!-- Script for Login Modal -->
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 
 </html>

@@ -119,6 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+#The below code is tells django where the static files are:
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
 
 MESSAGE_STORAGE  ="django.contrib.messages.storage.session.SessionStorage"
 
