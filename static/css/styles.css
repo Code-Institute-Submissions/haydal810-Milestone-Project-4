@@ -6,7 +6,7 @@ body {
     font-family: 'Dosis', sans-serif;
 }
 
-.bg_container {
+.bg_image {
     background: url("/static/img/bg1.jpg") no-repeat center center fixed;
     background-color: #2ecc71;
     background-size: cover;
@@ -14,10 +14,10 @@ body {
     width: 100%;
     overflow: hidden;
     z-index: -1;
-    opacity: 0.5;
-    
+        
 }
 
-.container {
+.centre_alignment {
     z-index: 10;
+    text-align: center;
 }

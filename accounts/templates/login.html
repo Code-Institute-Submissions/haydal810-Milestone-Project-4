@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 <!-- Page title here -->
-{% block page_title %}eStore | Login Page{% endblock %}
+{% block page_title %}Authentic Irish Sweaters | Login Page{% endblock %}
 <!-- Page heading here -->
-{% block page_heading %}User Page{% endblock %}
+{% block page_heading %}User Login{% endblock %}
 <!-- Login block content here -->
 {% block content %}
 <!-- Login Form -->
 <form method="POST">
     {% csrf_token %}
-    {{ login_form }}
+    {{ login_form.as_p }}
     <button type="submit" class="btn btn-danger">Login <i class="fas fa-sign-in-alt"></i></button>
 </form>
 
