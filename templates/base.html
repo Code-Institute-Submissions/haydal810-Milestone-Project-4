@@ -77,34 +77,52 @@
         <!-- Collapsible content -->
     </nav>
     <div class="container-fluid bg_image">
-        <div class="row">
-            <div class="col-12 centre_alignment">
-                <!-- Page Headline, to identify to user the page they are on -->
-                <h1 class="text-white">{% block page_heading %}{% endblock %}</h1>
+        <div class="opaque-overlay">
+            <div class="row">
+                <div class="col-12 centre_alignment col_content">
+                    <!-- Page Headline, to identify to user the page they are on -->
+                    <h1 class="text-white">{% block page_heading %}{% endblock %}</h1>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 centre_alignment text-white">
-                {% if messages %}
 
-                <!-- Message for logging out / logging in -->
-                {% for message in messages %}
-                {{ message }}
-                {% endfor %}
 
-                {% endif %}
+            <!-- Row for Message for logging out / logging in -->
+            <div class="row">
+                <div class="col-12 centre_alignment text-white col_content">
+                    {% if messages %}
 
-                {% block content %}
-                {% endblock %}
+
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Row for login / register / my profile -->
+            <div class="row">
+                <div class="col-12 centre_alignment text-white col_content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            <!-- Row for About_us block content -->
+            <div class="row justify-content-around text-white centre_alignment aboutus_row">
+                <div class="col-12 col-md-4 col_content">
+                    {% block index_content %}
+                    {% endblock %}
+                </div>
+                <div class="col-12 col-md-6 col_content">
+                    {% block featured_content %}
+                    {% endblock %}
+                </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-            </div>
-        </div>
-    </div>
+
+
 
 
 </body>
