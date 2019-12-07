@@ -26,7 +26,7 @@
 
 {% endblock %}
 
-<!-- Featured Content -->
+<!-- Featured Products Content -->
 {% block featured_content %}
 
 <div class="top_buffer">
@@ -39,10 +39,44 @@
         deserunt mollit anim id est laborum.
     </p>
 </div>
-
-
 {% endblock %}
 
+<!-- Contact Us Content -->
 {% block contactus_content %}
-
+<div class="top_buffer">
+    <h2>Contact Us</h2>
+    <form>
+        <div class="form-row form-custom">
+            <label for="inputEmail">Email Address</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+        </div>
+        <div class="form-row form-custom">
+            <label for="inputFullName">Full Name</label>
+            <input type="text" class="form-control" id="inputFullName" placeholder="Full Name" required>
+        </div>
+        <div class="form-row form-custom">
+            <label for="inputAreaofInterest">Nature of Enquiry</label>
+            <select id="inputAreaofInterest" class="custom-select" required>
+                <option value="">Select from Dropdown List</option>
+                <option value="1">General Enquiry</option>
+                <option value="2">Delivery Information</option>
+                <option value="3">Product Information</option>
+                <option value="4">Payment Information</option>
+                <option value="4">Advertise on this Website</option>
+            </select>
+        </div>
+        <div class="form-row form-custom">
+            <label for="messagearea">Message</label>
+            <textarea class="form-control" id="messagearea" rows="6" placeholder="Type your Message here"
+                required></textarea>
+        </div>
+        <div class="form-row form-custom">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                <label class="custom-control-label" for="customCheck1">I am not a Robot</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+    </form>
+</div>
 {% endblock %}

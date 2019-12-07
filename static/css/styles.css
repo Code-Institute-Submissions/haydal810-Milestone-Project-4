@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Dosis', sans-serif;
-    background-color: #2ecc71;
+    background-color: #DC3546;
 }
 
 
@@ -13,7 +13,7 @@ body {
     background: url("/static/img/bg1.jpg") no-repeat center center fixed;
     background-color: #2ecc71;
     background-size: cover;
-    height: 250vh;
+    height: 350vh;
     width: 100%;
     margin: auto;
     z-index: -1;
@@ -37,7 +37,7 @@ body {
 }
 
 .top_buffer {
-    margin-top: 300px;
+    margin-top: 200px;
 }
 
 .col_content {
