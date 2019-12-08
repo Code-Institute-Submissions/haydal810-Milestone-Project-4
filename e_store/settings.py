@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap_modal_forms',
+    'crispy_forms',
     'accounts'
 ]
 
@@ -140,3 +141,5 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailAuth'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
