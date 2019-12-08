@@ -13,7 +13,7 @@ body {
     background: url("/static/img/bg1.jpg") no-repeat center center fixed;
     background-color: #2ecc71;
     background-size: cover;
-    height: 220vh;
+    height: fit-content;
     width: 100%;
     margin: auto;
     z-index: -1;
@@ -31,9 +31,20 @@ body {
     position: relative;
     top: 0;
     left: 0;
-    height: 220vh;
+    height: fit-content;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+.footer_opaque-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: fit-content;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .top_buffer {
@@ -44,10 +55,13 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .socialmedia_icon {
     font-size: 10px;
 }
+
+
 
 
