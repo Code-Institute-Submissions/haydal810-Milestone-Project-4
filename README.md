@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/haydal810/Milestone-Project-4.svg?branch=master)](https://travis-ci.org/haydal810/Milestone-Project-4)
+
 ## This is the final Milestone Project, from David Hayden, for Code Institute.
 
 ## Online Ecommerce Store - 
