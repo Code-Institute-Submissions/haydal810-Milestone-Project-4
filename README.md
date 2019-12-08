@@ -74,6 +74,8 @@ Description here
 
 ## Testing
 
+Make note of the Travis setup for continous testing, and setting the Travis Environment Variables for your SECRET_KEY, etc
+
 ### User Testing
 
 #### Manual User testing:
