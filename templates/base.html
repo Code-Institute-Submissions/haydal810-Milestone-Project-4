@@ -1,51 +1,226 @@
+{% load staticfiles %}
+
 <html>
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Customised CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'profile' %}">My Profile</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-            {% else %}
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'registration' %}">Register</a></li>
-            <li><a href="{% url 'login' %}" >Login</a></li>
-            {% endif %}               
-            <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">MyCart</a></li>
-            <li><a href="#">Item Reviews</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="{% url 'admin:index' %}">Site Owner Login</a></li>
-        </ul>
+
+    <!-- Nav Bar, with if statements, depending if user is logged in or out -->
+    <!--Navbar-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-danger">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="{% url 'index' %}">E | Store</a>
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'registration' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MyCart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Product Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:index' %}">Site Owner Login</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Collapsible content -->
     </nav>
+    <div class="container-fluid bg_image">
+        <div class="opaque-overlay">
+            <div class="row">
+                <div class="col-12 centre_alignment col_content">
+                    <!-- Page Headline, to identify to user the page they are on -->
+                    <h1 class="text-white">{% block page_heading %}{% endblock %}</h1>
+                </div>
+            </div>
 
-    <hr>
 
-    <h1>{% block page_heading %}{% endblock %}</h1>
+            <!-- Row for Message for logging out / logging in -->
+            <div class="row">
+                <div class="col-12 centre_alignment text-white col_content">
+                    {% if messages %}
 
+
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Row for login / register / my profile -->
+            <div class="row justify-content-center">
+                <div class="col-10 col-md-3 centre_alignment text-white col_content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            <!-- Row for About_Us block content -->
+            <div class="row justify-content-around text-white centre_alignment aboutus_row">
+                <div class="col-12 col-md-4 col_content">
+                    {% block index_content %}
+                    {% endblock %}
+                </div>
+            </div>
+            <!-- Row for Featured Products block content -->
+            <div class="row justify-content-around text-white centre_alignment aboutus_row">
+                <div class="col-12 col-md-4 col_content">
+                    {% block featured_content %}
+                    {% endblock %}
+                </div>
+            </div>
+            <!-- Row for Contact Us -->
+            <div class="row justify-content-center">
+                <div class="col-10 col-md-8 centre_alignment text-white col_content">
+                    {% block contactus_content %}
+                    {% endblock %}
+                </div>
+            </div>
+            <!-- Row for Footer -->
+            <div class="row justify-content-center footer_opaque-overlay">
+                <div class="col-10 col-md-8 centre_alignment text-white col_content">
+                    <footer class="page-footer font-small blue pt-4 text-white">
+
+                        <!-- Footer Links -->
+                        <div class="container-fluid text-center text-md-left">
+                
+                            <!-- Grid row -->
+                            <div class="row">
+                
+                                <!-- Grid column -->
+                                <div class="col-md-6 mt-md-0 mt-3">
+                
+                                    <!-- Content -->
+                                    <h5 class="text-uppercase">Authentic Irish Sweaters E-Store</h5>
+                                    <p>Buy a little piece of IRELAND...</p>
+                
+                                </div>
+                                <!-- Grid column -->
+                
+                                <hr class="clearfix w-100 d-md-none pb-3">
+                
+                                <!-- Grid column -->
+                                <div class="col-md-3 mb-md-0 mb-3">
+                
+                                    <!-- Links -->
+                                    <h5 class="text-uppercase">Follow Us</h5>
+                
+                                    <div class="list-unstyled text-white">
+                                        <a class="text-white" href="https://www.facebook.com/" target="_blank"><i
+                                                class="fab fa-facebook-square fa-2x"></i></a>
+                                        <a class="text-white" href="https://www.google.ie/" target="_blank"><i
+                                                class="fab fa-google-plus-square fa-2x"></i></a>
+                                        <a class="text-white" href="https://www.instagram.com/explore/" target="_blank"><i
+                                                class="fab fa-instagram fa-2x"></i></a>
+                
+                                    </div>
+                
+                                </div>
+                                <!-- Grid column -->
+                
+                                <!-- Grid column -->
+                                <div class="col-md-3 mb-md-0 mb-3">
+                
+                                    <!-- Links -->
+                                    <h5 class="text-uppercase">External Links</h5>
+                
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a class="text-white" href="https://ireland.ie/">This is Ireland</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-white" href="https://reeksdistrict.com/">South-west Ireland</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-white" href="https://dublin.ie/">Dublin, Ireland</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-white" href="https://www.discoverireland.ie/">Discover Ireland</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Grid column -->
+                
+                            </div>
+                            <!-- Grid row -->
+                
+                        </div>
+                        <!-- Footer Links -->
+                
+                        <!-- Copyright -->
+                        <div class="footer-copyright text-center py-3 text-white">© 2019 Copyright:
+                            <a href="https://www.linkedin.com/in/david-hayden810/"> Dave Hayden<br>(Student Developer)</a>
+                        </div>
+                        <!-- Copyright -->
+                
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer template borrowed from https://mdbootstrap.com/ -->
     
-    {% if messages %}
-    
-    <!-- Test Message for logging out / logging in -->
-    {% for message in messages %}
-    {{ message }}
-    {% endfor %}
+    <!-- End Footer -->
 
-    {% endif %}
-        
-    {% block content %}
-    {% endblock %}
+
 
 </body>
 
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>

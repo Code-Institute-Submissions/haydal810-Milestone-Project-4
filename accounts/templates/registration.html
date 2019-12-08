@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
 <!-- Page title here -->
-{% block page_title %}eStore | Registration {% endblock %}
+{% block page_title %}Authentic Irish Sweaters | Registration {% endblock %}
 <!-- Page heading here -->
 {% block page_heading %}Register here{% endblock %}
 <!-- Registration Block Content here -->
@@ -9,7 +12,7 @@
 <br>
 <form method="POST">
     {% csrf_token %}
-    {{ registration_form.as_p }}
-    <button type="submit">Register</button>
+    {{ registration_form|crispy }}
+    <button type="submit" class="btn btn-success">Register <i class="fas fa-hand-point-right"></i></button>
 </form>
 {% endblock %}

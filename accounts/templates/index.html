@@ -1,5 +1,81 @@
 {% extends 'base.html' %}
 <!-- Page title here -->
-{% block page_title %}eStore | Home Page{% endblock %}
+{% block page_title %}Authentic Irish Sweaters | Home {% endblock %}
 <!-- Page heading here -->
-{% block page_heading %}Welcome | Home Page{% endblock %}
+{% block page_heading %}
+<div>
+    <p>WELCOME to the Authentic Irish Sweaters E-Store</p>
+</div>
+<div>
+    <button type="button" class="btn btn-success top_buffer">View Authentic Irish Products</button>
+</div>
+{% endblock %}
+<!-- About Us Content -->
+{% block index_content %}
+
+<div class="top_buffer">
+    <h2>About Us</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+        deserunt mollit anim id est laborum.
+    </p>
+</div>
+
+{% endblock %}
+
+<!-- Featured Products Content -->
+{% block featured_content %}
+
+<div class="top_buffer">
+    <h2>Featured Products</h2>
+    <p>
+        FEATURED PRODUCTS <tbody>
+            <br>
+            BE LISTED HERE...
+        </tbody>
+    </p>
+</div>
+{% endblock %}
+
+<!-- Contact Us Content -->
+{% block contactus_content %}
+<div class="top_buffer">
+    <h2>Contact Us</h2>
+    <form>
+        <div class="form-row form-custom">
+            <label for="inputEmail">Email Address</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+        </div>
+        <div class="form-row form-custom">
+            <label for="inputFullName">Full Name</label>
+            <input type="text" class="form-control" id="inputFullName" placeholder="Full Name" required>
+        </div>
+        <div class="form-row form-custom">
+            <label for="inputAreaofInterest">Nature of Enquiry</label>
+            <select id="inputAreaofInterest" class="custom-select" required>
+                <option value="">Select from Dropdown List</option>
+                <option value="1">General Enquiry</option>
+                <option value="2">Delivery Information</option>
+                <option value="3">Product Information</option>
+                <option value="4">Payment Information</option>
+                <option value="4">Advertise on this Website</option>
+            </select>
+        </div>
+        <div class="form-row form-custom">
+            <label for="messagearea">Message</label>
+            <textarea class="form-control" id="messagearea" rows="6" placeholder="Type your Message here"
+                required></textarea>
+        </div>
+        <div class="form-row form-custom">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                <label class="custom-control-label" for="customCheck1">I am not a Robot</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+    </form>
+</div>
+{% endblock %}

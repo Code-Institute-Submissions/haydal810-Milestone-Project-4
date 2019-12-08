@@ -2,7 +2,7 @@
 
 ## Online Ecommerce Store - 
 
-## Test Line here
+## Test Line here xx
 
 Description here
 
@@ -208,7 +208,7 @@ The app should open in a new tab.
 All text in this project was written by the developer.
 
 ### Media
-- The background image was sourced from TBA...
+- The background image was sourced from Pexels (bg image), 
 
 ### Acknowledgements
 
