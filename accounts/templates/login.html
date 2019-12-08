@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
 <!-- Page title here -->
 {% block page_title %}Authentic Irish Sweaters | Login Page{% endblock %}
 <!-- Page heading here -->
@@ -8,7 +11,7 @@
 <!-- Login Form -->
 <form method="POST">
     {% csrf_token %}
-    {{ login_form.as_p }}
+    {{ login_form|crispy }}
     <button type="submit" class="btn btn-danger">Login <i class="fas fa-sign-in-alt"></i></button>
 </form>
 
