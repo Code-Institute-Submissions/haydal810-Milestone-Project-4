@@ -1,6 +1,10 @@
 /* Customised CSS  */
 
+/* Google Fonts import link  */
+
 @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
+/* body CSS  */
 
 body {
     font-family: 'Dosis', sans-serif;
@@ -27,6 +31,8 @@ body {
     text-align: center;
 }
 
+/* Background Image overlay  */
+
 .opaque-overlay {
     position: relative;
     top: 0;
@@ -35,6 +41,8 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* Footer CSS */
 
 .footer_opaque-overlay {
     position: relative;
