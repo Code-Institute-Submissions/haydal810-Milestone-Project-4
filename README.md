@@ -211,6 +211,8 @@ The app should open in a new tab.
 ### Content
 All text in this project was written by the developer.
 
+make note of crispy forms
+
 ### Media
 - The background image was sourced from Pexels (bg image), 
 
