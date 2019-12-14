@@ -9,7 +9,7 @@
 <!-- Login block content here -->
 {% block content %}
 <!-- Login Form -->
-<form method="POST">
+<form method="POST" class="uniForm">
     {% csrf_token %}
     {{ login_form|crispy }}
     <button type="submit" class="btn btn-danger">Login <i class="fas fa-sign-in-alt"></i></button>
