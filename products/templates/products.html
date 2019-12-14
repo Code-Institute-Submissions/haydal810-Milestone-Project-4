@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
 <!-- Page title here -->
 {% block page_title %}Authentic Irish Sweaters | Products for Sale {% endblock %}
 <!-- Page heading here -->
@@ -8,11 +10,11 @@
 </div>
 {% endblock %}
 
-{% block content %}
+{% block product_content %}
 
-<div class="row row-flex">
+<div class="">
     {% for product in products %}
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+    <div class="display panel panel-default">
         <div class="panel-body">
             <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
