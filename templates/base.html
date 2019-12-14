@@ -21,8 +21,8 @@
 
 <body>
 
-    <!-- Nav Bar, with if statements, depending if user is logged in or out -->
     <!--Navbar-->
+    <!-- Nav Bar, with if statements, depending if user is logged in or out -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-danger">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="{% url 'index' %}">E | Store LOGO</a>
@@ -61,10 +61,14 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Shop</a>
+                    <a class="nav-link" href="{% url 'all_products' %}">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MyCart</a>
+                    <a class="nav-link" href="{% url 'view_cart' %}">MyCart <i class="fas fa-shopping-basket"></i>
+                        {% if product_count > 0 %}
+                        <label class="badge badge-primary">{{ product_count }}</label>
+                        {% endif %}
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Product Reviews</a>
@@ -79,6 +83,7 @@
         </div>
         <!-- Collapsible content -->
     </nav>
+    <!--Background Container-->
     <div class="container-fluid bg_image">
         <div class="opaque-overlay">
             <div class="row">
@@ -119,8 +124,8 @@
                 </div>
             </div>
 
-             <!-- Row for Cart -->
-             <div class="row justify-content-center">
+            <!-- Row for Cart -->
+            <div class="row justify-content-center">
                 <div class="col-8 col-md-3 centre_alignment text-white col_content">
                     {% block cart_content %}
                     {% endblock %}
