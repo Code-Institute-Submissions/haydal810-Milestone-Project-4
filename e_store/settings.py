@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     'crispy_forms',
     'accounts',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -95,6 +96,8 @@ else:
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
 
 
 

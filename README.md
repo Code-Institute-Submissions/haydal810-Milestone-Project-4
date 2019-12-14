@@ -211,7 +211,12 @@ The app should open in a new tab.
 ### Content
 All text in this project was written by the developer.
 
-make note of crispy forms
+Credits:
+1       Crispy forms
+2       https://favicon.io/favicon-generator/
+3       xxxxxxxx
+4       yyyyyyyy
+5       zzzzzzzz
 
 ### Media
 - The background image was sourced from Pexels (bg image), 
