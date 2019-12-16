@@ -1,5 +1,6 @@
 {% load staticfiles %}
 
+
 <html>
 
 <head>
@@ -88,11 +89,10 @@
         <div class="opaque-overlay">
             <div class="row">
                 <div class="col-12 centre_alignment col_content">
-                    <!-- Page Headline, to identify to user the page they are on -->
+                    <!-- Page Headline, to identify to User the page they are on -->
                     <h1 class="text-white">{% block page_heading %}{% endblock %}</h1>
                 </div>
             </div>
-
 
             <!-- Row for Message for logging out / logging in -->
             <div class="row">
@@ -110,15 +110,23 @@
 
             <!-- Row for login / register / my profile -->
             <div class="row justify-content-center">
-                <div class="col-10 col-md-4 centre_alignment text-white col_content">
+                <div class="col-10 col-md-2 centre_alignment text-white col_content">
                     {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            <!-- Row for search bar for products -->
+            <div class="row justify-content-end">
+                <div class="col-3 col-md-4 centre_alignment text-white col_content">
+                    {% block search_bar %}
                     {% endblock %}
                 </div>
             </div>
 
             <!-- Row for Products -->
             <div class="row justify-content-center">
-                <div class="col-8 col-md-3 centre_alignment text-white col_content">
+                <div class="col-8 col-md-4 col-sm-5 centre_alignment text-white col_content">
                     {% block product_content %}
                     {% endblock %}
                 </div>
@@ -126,7 +134,7 @@
 
             <!-- Row for Cart -->
             <div class="row justify-content-center">
-                <div class="col-8 col-md-3 centre_alignment text-white col_content">
+                <div class="col-4 col-md-8 centre_alignment text-white col_content">
                     {% block cart_content %}
                     {% endblock %}
                 </div>

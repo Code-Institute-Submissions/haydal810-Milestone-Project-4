@@ -9,14 +9,18 @@
 <div>
     <p>Choose from a range of different Celtic designs</p>
 </div>
+{% endblock %}
+
 <!-- Search for Products here -->
+{% block search_bar %}
 <div class="search_bar">
     <form action="{% url 'search' %}" method="get">
-        <input type="text" name="q">
-        <button type="search" class="btn btn-light">SEARCH PRODUCTS</button>
+        <input type="text" name="q" placeholder="Search Products here...">
+        <button type="search" class="btn btn-success btn-sm">SEARCH PRODUCTS</button>
     </form>
 </div>
 {% endblock %}
+
 
 {% block product_content %}
 

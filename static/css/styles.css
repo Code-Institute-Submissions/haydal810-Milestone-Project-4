@@ -42,9 +42,9 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Search bar */
-.search_bar {
-    font-size: 25px;
+/* Search btn */
+.search_btn {
+    font-size: 15px;
 }
 
 /* badge for Cart Navbar Item */
@@ -75,6 +75,8 @@ caption p {
     border-color: transparent;
     padding: 0 10px;
 }
+
+
 
 .panel-body {
     height: 100%;
