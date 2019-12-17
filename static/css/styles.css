@@ -42,6 +42,51 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Search btn */
+.search_btn {
+    font-size: 15px;
+}
+
+/* badge for Cart Navbar Item */
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+/* Product Image, description, etc */
+
+.product {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+caption p {
+    word-wrap: break-word;
+}
+
+.panel-default {
+    border-color: transparent;
+    padding: 0 10px;
+}
+
+
+
+.panel-body {
+    height: 100%;
+    border: 1px solid #ddd;
+}
+
+.product-description {
+    min-height: 40px;
+}
+
 /* Footer CSS */
 
 .footer_opaque-overlay {
