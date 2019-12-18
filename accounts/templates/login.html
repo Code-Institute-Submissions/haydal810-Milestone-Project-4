@@ -8,7 +8,7 @@
 <!-- Page heading here -->
 {% block page_heading %}
 <div class="row justify-content-center">
-    <div class="col-3 centre_alignment col_content">
+    <div class="col-6 centre_alignment col_content">
         <!-- Page Headline, to identify to User the page they are on -->
         <h2 class="text-white">User Login</h2>
     </div>
@@ -21,7 +21,7 @@
 <div class="row justify-content-center">
     <div class="col-10 col-md-3 centre_alignment">
         <!-- Login Form -->
-        <form method="POST" class="uniForm">
+        <form method="POST" class="uniForm text-white">
             {% csrf_token %}
             {{ login_form|crispy }}
             <button type="submit" class="btn btn-success">Login <i class="fas fa-sign-in-alt"></i></button>

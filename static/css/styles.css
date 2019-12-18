@@ -103,13 +103,13 @@ caption p {
 
 /* Footer CSS */
 
-.footer_opaque-overlay {
+.footer {
     position: relative;
     top: 0;
     left: 0;
     height: fit-content;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #c8d6e5;
     margin-right: 0px;
     margin-left: 0px;
 }
@@ -128,6 +128,12 @@ caption p {
 
 .socialmedia_icon {
     font-size: 10px;
+}
+
+/* text color for form hint in registration */
+
+.form-text {
+    color: white;
 }
 
 

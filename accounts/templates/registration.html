@@ -19,32 +19,16 @@
 
 <!-- Registration Block Content here -->
 {% block content %}
-<div class="row headings">
-    <div class="col-4">
+<div class="row justify-content-center">
+    <div class="col-10 col-md-3 centre_alignment ">
         <!-- Page Headline, to identify to User the page they are on -->
-        <h2 class="text-white">Register here</h2>
+        <p class="text-white">Already have an account? Login <a class="text-white" href="{% url 'login' %}">HERE</a></p>
+        <form method="POST" class="text-white">
+            {% csrf_token %}
+            {{ registration_form|crispy }}
+            <button type="submit" class="btn btn-success">Register <i class="fas fa-hand-point-right"></i></button>
+        </form>
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p>Already have an account? Login <a href="{% url 'login' %}">HERE</a></p>
-<br>
-<form method="POST">
-    {% csrf_token %}
-    {{ registration_form|crispy }}
-    <button type="submit" class="btn btn-success">Register <i class="fas fa-hand-point-right"></i></button>
-</form>
 {% endblock %}
