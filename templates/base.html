@@ -59,7 +59,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{% url 'index' %}#about">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'all_products' %}">Shop</a>
@@ -75,7 +75,7 @@
                     <a class="nav-link" href="#">Product Reviews</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{% url 'index' %}#contact">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'admin:index' %}">Site Owner Login</a>
@@ -94,7 +94,7 @@
 
             <!-- This row is for alert messages ONLY -->
             <div class="row justify-content-center message_row">
-                <div class="col-10 col-md-4 centre_alignment">
+                <div class="col-10 col-md-2 centre_alignment">
                     <!-- Message for logging out / logging in -->
                     {% if messages %}
 
@@ -118,6 +118,10 @@
 
             <!-- Login / Register / My profile -->
             {% block content %}
+            {% endblock %}
+
+            <!-- reset password form -->
+            {% block reset_form %}
             {% endblock %}
 
         </div>
