@@ -8,16 +8,29 @@
 
 body {
     font-family: 'Dosis', sans-serif;
-    background-color: #DC3546;
+    
 }
 
+/* Navbar customised css  */
+.navbar {
+    background-color: white;
+}
 
+/* Template headings  */
+
+.message_row {
+    z-index: 5;
+}
+
+/* .headings {
+    padding-top: 25px;
+} */
 
 .bg_image {
     background: url("/static/img/bg1.jpg") no-repeat center center fixed;
-    background-color: #2ecc71;
+    background-color: #f5f6fa;;
     background-size: cover;
-    height: fit-content;
+    height: 80vh;
     width: 100%;
     margin: auto;
     z-index: -1;
@@ -35,9 +48,10 @@ body {
 
 .opaque-overlay {
     position: relative;
+    overflow: hidden;
     top: 0;
     left: 0;
-    height: fit-content;
+    height: 80vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
 }
@@ -100,14 +114,15 @@ caption p {
     margin-left: 0px;
 }
 
-.top_buffer {
+/* .top_buffer {
     margin-top: 200px;
-}
+} */
 
 .col_content {
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
+    padding-top: 65px;
     padding-bottom: 50px;
 }
 

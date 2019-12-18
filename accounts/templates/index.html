@@ -1,50 +1,81 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
 <!-- Page title here -->
-{% block page_title %}Authentic Irish Sweaters | Home {% endblock %}
+{% block page_title %}Irish Sweaters | Home {% endblock %}
+
 <!-- Page heading here -->
 {% block page_heading %}
-<div>
-    <p>WELCOME to the Authentic Irish Sweaters E-Store</p>
-</div>
-<div>
-    <a class="btn btn-success top_buffer text-white" href="{% url 'all_products' %}" role="button">Browse Authentic
-        Irish Products</a>
+<div class="row">
+    <div class="col-12 centre_alignment col_content">
+        <!-- Page Headline, to identify to User the page they are on -->
+        <h1 class="text-white">WELCOME to the <br>Authentic Irish Sweaters<br> E-Store</h1>
+    </div>
 </div>
 {% endblock %}
+
+<!-- Carousel of Example Products -->
+{% block best_sellers %}
+<div class="row">
+    <div class="col-10  col-md-6 centre_alignment col_content">
+        <!-- List of 'best-selling' Products -->
+
+    </div>
+</div>
+{% endblock %}
+
+<!-- Browse Products Btn -->
+{% block browse_products %}
+<div class="row">
+    <div class="col-12 centre_alignment col_content">
+        <!-- Browse Button -->
+        <div>
+            <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">Browse
+                Authentic
+                Irish Products</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
 <!-- About Us Content -->
 {% block index_content %}
-
-<div class="top_buffer">
-    <h2>About Us</h2>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-    </p>
+<div class="row justify-content-center">
+    <div class="col-10 col-md-6 centre_alignment col_content">
+        <!-- Description of Injection -->
+        <h2>About Us</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.
+        </p>
+    </div>
 </div>
-
 {% endblock %}
+
 
 <!-- Featured Products Content -->
 {% block featured_content %}
 
-<div class="top_buffer">
-    <h2>Featured Products</h2>
-    <p>
-        FEATURED PRODUCTS <tbody>
-            <br>
-            BE LISTED HERE...
-        </tbody>
-    </p>
+<div class="row justify-content-center">
+    <div class="col-10 col-md-6 centre_alignment col_content">
+        <!-- Featured Products Injection -->
+        <h2>Featured Products</h2>
+        <p>Featured Products to go here...</p>
+    </div>
 </div>
 {% endblock %}
 
 <!-- Contact Us Content -->
 {% block contactus_content %}
-<div class="top_buffer">
-    <h2>Contact Us</h2>
+<div class="row justify-content-center">
+    <div class="col-10 col-md-6 centre_alignment col_content">
+        <!-- Contact Us Form -->
+        <h2>Contact Us</h2>
     <form>
         <div class="form-row form-custom">
             <label for="inputEmail">Email Address</label>
@@ -78,5 +109,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Send message</button>
     </form>
+    </div>
 </div>
 {% endblock %}

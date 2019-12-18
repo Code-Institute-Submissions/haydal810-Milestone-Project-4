@@ -22,9 +22,9 @@
 
 <body>
 
-    <!--Navbar-->
-    <!-- Nav Bar, with if statements, depending if user is logged in or out -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-danger">
+    <!-- Navbar -->
+    <!-- Navbar, with if statements, depending if user is logged in or out -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="{% url 'index' %}">E | Store LOGO</a>
         <!-- Collapse button -->
@@ -82,170 +82,185 @@
                 </li>
             </ul>
         </div>
-        <!-- Collapsible content -->
     </nav>
-    <!--Background Container-->
+
+    <!-- First Row, with background image -->
     <div class="container-fluid bg_image">
         <div class="opaque-overlay">
-            <div class="row">
-                <div class="col-12 centre_alignment col_content">
-                    <!-- Page Headline, to identify to User the page they are on -->
-                    <h1 class="text-white">{% block page_heading %}{% endblock %}</h1>
-                </div>
-            </div>
 
-            <!-- Row for Message for logging out / logging in -->
-            <div class="row">
-                <div class="col-12 centre_alignment text-white col_content">
+            <!-- Headline -->
+            {% block page_heading %}
+            {% endblock %}
+
+            <!-- This row is for alert messages ONLY -->
+            <div class="row justify-content-center message_row">
+                <div class="col-10 col-md-4 centre_alignment">
+                    <!-- Message for logging out / logging in -->
                     {% if messages %}
 
-
                     {% for message in messages %}
-                    {{ message }}
+                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
                     {% endfor %}
 
                     {% endif %}
                 </div>
+
             </div>
 
-            <!-- Row for login / register / my profile -->
-            <div class="row justify-content-center">
-                <div class="col-10 col-md-2 centre_alignment text-white col_content">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
+            <!-- Browse Products Btn -->
+            {% block browse_products %}
+            {% endblock %}
 
-            <!-- Row for search bar for products -->
-            <div class="row justify-content-end">
-                <div class="col-3 col-md-4 centre_alignment text-white col_content">
-                    {% block search_bar %}
-                    {% endblock %}
-                </div>
-            </div>
 
-            <!-- Row for Products -->
-            <div class="row justify-content-center">
-                <div class="col-8 col-md-4 col-sm-5 centre_alignment text-white col_content">
-                    {% block product_content %}
-                    {% endblock %}
-                </div>
-            </div>
 
-            <!-- Row for Cart -->
-            <div class="row justify-content-center">
-                <div class="col-4 col-md-8 centre_alignment text-white col_content">
-                    {% block cart_content %}
-                    {% endblock %}
-                </div>
-            </div>
-
-            <!-- Row for About_Us block content -->
-            <div class="row justify-content-around text-white centre_alignment aboutus_row">
-                <div class="col-12 col-md-4 col_content">
-                    {% block index_content %}
-                    {% endblock %}
-                </div>
-            </div>
-            <!-- Row for Featured Products block content -->
-            <div class="row justify-content-around text-white centre_alignment aboutus_row">
-                <div class="col-12 col-md-4 col_content">
-                    {% block featured_content %}
-                    {% endblock %}
-                </div>
-            </div>
-            <!-- Row for Contact Us -->
-            <div class="row justify-content-center">
-                <div class="col-10 col-md-5 centre_alignment text-white col_content">
-                    {% block contactus_content %}
-                    {% endblock %}
-                </div>
-            </div>
-            <!-- Row for Footer -->
-            <div class="row justify-content-center footer_opaque-overlay">
-                <div class="col-10 col-md-8 centre_alignment text-white col_content">
-                    <footer class="page-footer font-small blue pt-4 text-white">
-
-                        <!-- Footer Links -->
-                        <div class="container-fluid text-center text-md-left">
-
-                            <!-- Grid row -->
-                            <div class="row">
-
-                                <!-- Grid column -->
-                                <div class="col-md-6 mt-md-0 mt-3">
-
-                                    <!-- Content -->
-                                    <h5 class="text-uppercase">Authentic Irish Sweaters E-Store</h5>
-                                    <p>Buy a little piece of IRELAND...</p>
-
-                                </div>
-                                <!-- Grid column -->
-
-                                <hr class="clearfix w-100 d-md-none pb-3">
-
-                                <!-- Grid column -->
-                                <div class="col-md-3 mb-md-0 mb-3">
-
-                                    <!-- Links -->
-                                    <h5 class="text-uppercase">Follow Us</h5>
-
-                                    <div class="list-unstyled text-white">
-                                        <a class="text-white" href="https://www.facebook.com/" target="_blank"><i
-                                                class="fab fa-facebook-square fa-2x"></i></a>
-                                        <a class="text-white" href="https://www.google.ie/" target="_blank"><i
-                                                class="fab fa-google-plus-square fa-2x"></i></a>
-                                        <a class="text-white" href="https://www.instagram.com/explore/"
-                                            target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-
-                                    </div>
-
-                                </div>
-                                <!-- Grid column -->
-
-                                <!-- Grid column -->
-                                <div class="col-md-3 mb-md-0 mb-3">
-
-                                    <!-- Links -->
-                                    <h5 class="text-uppercase">External Links</h5>
-
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a class="text-white" href="https://ireland.ie/">This is Ireland</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-white" href="https://reeksdistrict.com/">South-west
-                                                Ireland</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-white" href="https://dublin.ie/">Dublin, Ireland</a>
-                                        </li>
-                                        <li>
-                                            <a class="text-white" href="https://www.discoverireland.ie/">Discover
-                                                Ireland</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- Grid column -->
-
-                            </div>
-                            <!-- Grid row -->
-
-                        </div>
-                        <!-- Footer Links -->
-
-                        <!-- Copyright -->
-                        <div class="footer-copyright text-center py-3 text-white">© 2019 Copyright:
-                            <a href="https://www.linkedin.com/in/david-hayden810/"> Dave Hayden<br>(Student
-                                Developer)</a>
-                        </div>
-                        <!-- Copyright -->
-
-                    </footer>
-                </div>
-            </div>
+            <!-- Login / Register / My profile -->
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
+
+    <!-- Second Row, best sellers -->
+    <div class="container-fluid">
+        <!-- best sellers -->
+        {% block best_sellers %}
+        {% endblock %}
+
+        <!-- Row for About_Us block content -->
+        {% block index_content %}
+        {% endblock %}
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Row for search bar for products -->
+
+    {% block search_bar %}
+    {% endblock %}
+
+
+    <!-- Row for Products -->
+
+    {% block product_content %}
+    {% endblock %}
+
+
+    <!-- Row for Cart -->
+
+    {% block cart_content %}
+    {% endblock %}
+
+
+
+
+    <!-- Row for Featured Products block content -->
+
+    {% block featured_content %}
+    {% endblock %}
+
+    <!-- Row for Contact Us -->
+
+    {% block contactus_content %}
+    {% endblock %}
+
+    <!-- Row for Footer -->
+    <div class="row justify-content-center footer_opaque-overlay">
+        <div class="col-10 col-md-8 centre_alignment text-white col_content">
+            <footer class="page-footer font-small blue pt-4 text-white">
+
+                <!-- Footer Links -->
+                <div class="container-fluid text-center text-md-left">
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6 mt-md-0 mt-3">
+
+                            <!-- Content -->
+                            <h5 class="text-uppercase">Authentic Irish Sweaters E-Store</h5>
+                            <p>Buy a little piece of IRELAND...</p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <hr class="clearfix w-100 d-md-none pb-3">
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 mb-md-0 mb-3">
+
+                            <!-- Links -->
+                            <h5 class="text-uppercase">Follow Us</h5>
+
+                            <div class="list-unstyled text-white">
+                                <a class="text-white" href="https://www.facebook.com/" target="_blank"><i
+                                        class="fab fa-facebook-square fa-2x"></i></a>
+                                <a class="text-white" href="https://www.google.ie/" target="_blank"><i
+                                        class="fab fa-google-plus-square fa-2x"></i></a>
+                                <a class="text-white" href="https://www.instagram.com/explore/" target="_blank"><i
+                                        class="fab fa-instagram fa-2x"></i></a>
+
+                            </div>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 mb-md-0 mb-3">
+
+                            <!-- Links -->
+                            <h5 class="text-uppercase">External Links</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="text-white" href="#">This is Ireland</a>
+                                </li>
+                                <li>
+                                    <a class="text-white" href="#">South-west
+                                        Ireland</a>
+                                </li>
+                                <li>
+                                    <a class="text-white" href="#">Dublin, Ireland</a>
+                                </li>
+                                <li>
+                                    <a class="text-white" href="#">Discover
+                                        Ireland</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                </div>
+                <!-- Footer Links -->
+
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3 text-white">© 2019 Copyright:
+                    <a class="text-white" href="https://www.linkedin.com/in/david-hayden810/"> Dave Hayden<br></a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+        </div>
+    </div>
+
     <!-- Footer template borrowed from https://mdbootstrap.com/ -->
 
     <!-- End Footer -->

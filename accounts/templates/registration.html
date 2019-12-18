@@ -3,11 +3,43 @@
 {% load crispy_forms_tags %}
 
 <!-- Page title here -->
-{% block page_title %}Authentic Irish Sweaters | Registration {% endblock %}
+{% block page_title %}Registration {% endblock %}
+
 <!-- Page heading here -->
-{% block page_heading %}Register here{% endblock %}
+{% block page_heading %}
+<div class="row">
+    <div class="col-12 centre_alignment col_content">
+        <!-- Page Headline, to identify to User the page they are on -->
+        <h2 class="text-white">Register here</h2>
+    </div>
+</div>
+{% endblock %}
+
+
+
 <!-- Registration Block Content here -->
 {% block content %}
+<div class="row headings">
+    <div class="col-4">
+        <!-- Page Headline, to identify to User the page they are on -->
+        <h2 class="text-white">Register here</h2>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p>Already have an account? Login <a href="{% url 'login' %}">HERE</a></p>
 <br>
 <form method="POST">

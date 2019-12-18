@@ -3,17 +3,32 @@
 {% load crispy_forms_tags %}
 
 <!-- Page title here -->
-{% block page_title %}Authentic Irish Sweaters | Login Page{% endblock %}
+{% block page_title %}Login Page{% endblock %}
+
 <!-- Page heading here -->
-{% block page_heading %}User Login{% endblock %}
+{% block page_heading %}
+<div class="row justify-content-center">
+    <div class="col-3 centre_alignment col_content">
+        <!-- Page Headline, to identify to User the page they are on -->
+        <h2 class="text-white">User Login</h2>
+    </div>
+</div>
+{% endblock %}
+
 <!-- Login block content here -->
 {% block content %}
 <!-- Login Form -->
-<form method="POST" class="uniForm">
-    {% csrf_token %}
-    {{ login_form|crispy }}
-    <button type="submit" class="btn btn-danger">Login <i class="fas fa-sign-in-alt"></i></button>
-</form>
+<div class="row justify-content-center">
+    <div class="col-10 col-md-3 centre_alignment">
+        <!-- Login Form -->
+        <form method="POST" class="uniForm">
+            {% csrf_token %}
+            {{ login_form|crispy }}
+            <button type="submit" class="btn btn-success">Login <i class="fas fa-sign-in-alt"></i></button>
+        </form>
+        <!-- Reset password button -->
+        <button type="button" class="btn btn-danger btn-sm"><a href="{% url 'password_reset' %}" class="text-white">I forgot my password</a></button>
 
-<p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+    </div>
+</div>
 {% endblock %}
