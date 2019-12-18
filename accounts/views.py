@@ -13,7 +13,7 @@ def index(request):
 def logout(request):
     """Log the user out"""
     auth.logout(request)
-    messages.success(request, "You have successfully been logged out")
+    messages.success(request, "You have successfully logged out")
     return redirect(reverse('index'))
 
 
@@ -54,7 +54,8 @@ def registration(request):
                                      password=request.POST['password1'])
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully registered")
+                messages.success(request, "You have successfully registered and logged in")
+                return render(request,  'index.html')
             else:
                 messages.error(request, "Unable to register your account at this time")
     else:
