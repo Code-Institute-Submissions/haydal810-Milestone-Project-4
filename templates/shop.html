@@ -85,88 +85,25 @@
     </nav>
 
     <!-- First Row, with background image -->
-    <div class="container-fluid bg_image">
-        <div class="opaque-overlay">
-
-            <!-- Headline -->
-            {% block page_heading %}
-            {% endblock %}
-
-            <!-- This row is for alert messages ONLY -->
-            <div class="row justify-content-center message_row">
-                <div class="col-10 col-md-4 centre_alignment">
-                    <!-- Message for logging out / logging in -->
-                    {% if messages %}
-
-                    {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        {{ message }}
-                    </div>
-                    {% endfor %}
-
-                    {% endif %}
-                </div>
-
-            </div>
-
-            <!-- Browse Products Btn -->
-            {% block browse_products %}
-            {% endblock %}
-
-
-
-            <!-- Login / Register / My profile -->
-            {% block content %}
-            {% endblock %}
-        </div>
-    </div>
-
-    <!-- Second Row -->
     <div class="container-fluid">
-        <!-- best sellers -->
-        {% block best_sellers %}
+        <!-- Row for search bar for products -->
+
+        {% block search_bar %}
         {% endblock %}
 
-        <!-- Row for About_Us block content -->
-        {% block index_content %}
+
+        <!-- Row for Products -->
+
+        {% block product_content %}
         {% endblock %}
 
-        <!-- Row for Featured Products block content -->
 
-        {% block featured_content %}
+        <!-- Row for Cart -->
+
+        {% block cart_content %}
         {% endblock %}
-
-        <!-- Row for Contact Us -->
-
-        {% block contactus_content %}
-        {% endblock %}
-
 
     </div>
-
-
-    <!-- Row for search bar for products -->
-
-    {% block search_bar %}
-    {% endblock %}
-
-
-    <!-- Row for Products -->
-
-    {% block product_content %}
-    {% endblock %}
-
-
-    <!-- Row for Cart -->
-
-    {% block cart_content %}
-    {% endblock %}
-
-
-
 
 
 
