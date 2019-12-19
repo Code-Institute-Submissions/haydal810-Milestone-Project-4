@@ -21,13 +21,13 @@
 <!-- User Profile Block Content here -->
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-10 col-md-6 centre_alignment col_content text-white">
+    <div class="col-10 col-md-6 centre_alignment col_content text-dark">
         <!-- User Profile -->
-        <p>Username: {{ user.username }} </p>
-        <p>Full Name: {{ user.username }} </p>
-        <p>Email Address: {{ user.email }} </p>
-        <p>Ph. Number: </p>
-        <p>Delivery Address: </p>
+        <ul class="list-group">
+            <li class="list-group-item">Username: {{ user.username }}</li>
+            <li class="list-group-item">Email Address: {{ user.email }}</li>
+            
+        </ul>
     </div>
 </div>
 
