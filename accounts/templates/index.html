@@ -9,20 +9,17 @@
 <div class="row">
     <div class="col-12 centre_alignment col_content">
         <!-- Page Headline, to identify to User the page they are on -->
-        <h1 class="text-white">WELCOME to the <br>Authentic Irish Sweaters<br> E-Store</h1>
-    </div>
-</div>
-{% endblock %}
-
-<!-- Browse Products Btn -->
-{% block browse_products %}
-<div class="row">
-    <div class="col-12 centre_alignment col_content">
-        <!-- Browse Button -->
-        <div>
-            <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">Browse
-                Authentic
-                Irish Products</a>
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Welcome to the Authentic Irish Sweaters E-Store</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+                to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+                <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">Browse
+                    Authentic
+                    Irish Products</a>
+            </p>
         </div>
     </div>
 </div>
@@ -63,39 +60,39 @@
     <div class="col-10 col-md-6 centre_alignment col_content">
         <!-- Contact Us Form -->
         <h2>Contact Us</h2>
-    <form>
-        <div class="form-row form-custom">
-            <label for="inputEmail">Email Address</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
-        </div>
-        <div class="form-row form-custom">
-            <label for="inputFullName">Full Name</label>
-            <input type="text" class="form-control" id="inputFullName" placeholder="Full Name" required>
-        </div>
-        <div class="form-row form-custom">
-            <label for="inputAreaofInterest">Nature of Enquiry</label>
-            <select id="inputAreaofInterest" class="custom-select" required>
-                <option value="">Select from Dropdown List</option>
-                <option value="1">General Enquiry</option>
-                <option value="2">Delivery Information</option>
-                <option value="3">Product Information</option>
-                <option value="4">Payment Information</option>
-                <option value="4">Advertise on this Website</option>
-            </select>
-        </div>
-        <div class="form-row form-custom">
-            <label for="messagearea">Message</label>
-            <textarea class="form-control" id="messagearea" rows="6" placeholder="Type your Message here"
-                required></textarea>
-        </div>
-        <div class="form-row form-custom">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck1" required>
-                <label class="custom-control-label" for="customCheck1">I am not a Robot</label>
+        <form>
+            <div class="form-row form-custom">
+                <label for="inputEmail">Email Address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
             </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Send message</button>
-    </form>
+            <div class="form-row form-custom">
+                <label for="inputFullName">Full Name</label>
+                <input type="text" class="form-control" id="inputFullName" placeholder="Full Name" required>
+            </div>
+            <div class="form-row form-custom">
+                <label for="inputAreaofInterest">Nature of Enquiry</label>
+                <select id="inputAreaofInterest" class="custom-select" required>
+                    <option value="">Select from Dropdown List</option>
+                    <option value="1">General Enquiry</option>
+                    <option value="2">Delivery Information</option>
+                    <option value="3">Product Information</option>
+                    <option value="4">Payment Information</option>
+                    <option value="4">Advertise on this Website</option>
+                </select>
+            </div>
+            <div class="form-row form-custom">
+                <label for="messagearea">Message</label>
+                <textarea class="form-control" id="messagearea" rows="6" placeholder="Type your Message here"
+                    required></textarea>
+            </div>
+            <div class="form-row form-custom">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                    <label class="custom-control-label" for="customCheck1">I am not a Robot</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
     </div>
 </div>
 {% endblock %}
