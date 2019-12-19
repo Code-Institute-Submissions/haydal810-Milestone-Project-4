@@ -39,6 +39,23 @@ body {
         
 }
 
+/* bg image for featured products row  */
+
+.bg_image_featured {
+    background-color: #f1f2f6;
+    background-size: cover;
+    height: 50vh;
+    width: 100%;
+    margin: auto;
+    z-index: -1;
+    padding: 0px;
+    overflow: hidden;
+}
+
+
+
+
+
 .centre_alignment {
     z-index: 10;
     text-align: center;

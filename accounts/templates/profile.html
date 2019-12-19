@@ -1,17 +1,40 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 <!-- Page title here -->
 {% block page_title %}
 {{ user }}'s Profile
-{% endblock %} 
+{% endblock %}
 
 <!-- Page heading here -->
 {% block page_heading %}
-{{ user }}'s Profile
-{% endblock %} 
+<div class="row justify-content-center">
+    <div class="col-10  col-md-6 centre_alignment col_content">
+        <!-- User Profile heading -->
+        <h2 class="text-white">{{ user }}'s Profile</h2>
+    </div>
+</div>
+{% endblock %}
+
+
+
 
 <!-- User Profile Block Content here -->
 {% block content %}
+<div class="row justify-content-center">
+    <div class="col-10 col-md-6 centre_alignment col_content text-white">
+        <!-- User Profile -->
+        <p>Username: {{ user.username }} </p>
+        <p>Full Name: {{ user.username }} </p>
+        <p>Email Address: {{ user.email }} </p>
+        <p>Ph. Number: </p>
+        <p>Delivery Address: </p>
+    </div>
+</div>
+
+
+
+
+
 <p>Full Name: </p>
 <p>Email Address: {{ profile.email }} </p>
 <p>Ph. Number: </p>
