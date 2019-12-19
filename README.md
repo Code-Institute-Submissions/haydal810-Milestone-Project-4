@@ -211,7 +211,7 @@ All text in this project was written by the developer.
 
 Credits:
 1.       Crispy forms
-2.      https://favicon.io/favicon-generator/
+2.       https://favicon.io/favicon-generator/
 3.       Images - stocksnap.io, pexels
 4.       https://simpleisbetterthancomplex.com/tips/2016/09/06/django-tip-14-messages-framework.html
 5.       https://www.freelogodesign.org/
