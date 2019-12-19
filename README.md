@@ -2,11 +2,9 @@
 
 ## This is the final Milestone Project, from David Hayden, for Code Institute.
 
-## Online Ecommerce Store - 
+### A fictitious Online E-commerce Store named "Authentic Irish Sweaters Co."
 
-## Test Line here xx
-
-Description here
+#### An online store setup for an imaginary company that sells Irish-made Sweaters & Jumpers. The owner of the company want to be able to reach a global market, and believes that an online store is the way to do this.
 
 ## UX
 
