@@ -22,9 +22,13 @@ body {
     z-index: 5;
 }
 
-/* .headings {
-    padding-top: 25px;
-} */
+/* Customised Jumbotron css  */
+hr {
+    
+    border-top: 1px solid white;
+}
+
+/* Background Image */
 
 .bg_image {
     background: url("/static/img/bg1.jpg") no-repeat center center fixed;
@@ -141,7 +145,7 @@ caption p {
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
-    padding-top: 65px;
+    padding-top: 95px;
     padding-bottom: 50px;
 }
 
