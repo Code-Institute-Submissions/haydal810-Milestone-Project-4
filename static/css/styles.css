@@ -94,14 +94,25 @@ hr {
     border-radius: 9px;
 }
 
-/* Product Image, description, etc */
+/* Product Image, description, etc in shop */
 
-.product {
+.product_shop {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     width: 150px;
     height: 150px;
+    margin: 0 auto;
+}
+
+/* Product Image, description, etc in cart */
+
+.product_cart {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
     margin: 0 auto;
 }
 
@@ -205,7 +216,7 @@ caption p {
     margin: auto;
   }
 
-
+/* cart section  */
 
 
 

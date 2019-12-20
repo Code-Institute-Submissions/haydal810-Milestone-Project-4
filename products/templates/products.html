@@ -42,7 +42,7 @@
     {% for product in products %}
     <div class="col-10 col-md-6 col-lg-4 text-center product_padding">
         <div class="card">
-            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+            <div class="product_shop" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
             <p><strong>{{ product.name }}</strong></p>
             <p class="product-description">{{ product.description }}</p>

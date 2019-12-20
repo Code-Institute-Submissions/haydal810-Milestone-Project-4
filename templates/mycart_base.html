@@ -66,11 +66,13 @@
                     <a class="nav-link" href="{% url 'all_products' %}">Shop</a>
                 </li>
                 <li class="nav-item">
+                    {% if product_count > 0 %}
                     <a class="nav-link" href="{% url 'view_cart' %}">MyCart <i class="fas fa-shopping-basket"></i>
                         {% if product_count > 0 %}
                         <label class="badge badge-primary">{{ product_count }}</label>
                         {% endif %}
                     </a>
+                    {% endif %}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Product Reviews</a>
@@ -91,8 +93,8 @@
     <!-- Container for Cart -->
     <div class="container-fluid product_container">
         <!-- Cart block contant Injection here -->
-
-
+        {% block cart_content %}
+        {% endblock %}
 
 
 
