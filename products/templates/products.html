@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 <!-- Page title here -->
-{% block page_title %}Products for Sale {% endblock %}
+{% block page_title %}Products for Sale{% endblock %}
 
 <!-- Page heading here -->
 {% block page_heading %}
@@ -19,44 +19,45 @@
 <!-- Search for Products here -->
 {% block search_bar %}
 
-<div class="row justify-content-start">
-    <div class="col-8 col-md-4 text-center">
+<div class="row justify-content-center">
+    <div class="col-10 col-md-6 col-lg-4 center-block" >
         <form action="{% url 'search' %}" method="get">
-            <input type="text" name="q" placeholder="Search Products here...">
-            <button type="search" class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+            <div class="input-group mb-3">
+                <input class="form-control" type="text" name="q" placeholder="Search Products here...">
+                <div class="input-group-append">
+                    <button type="search" class="btn btn-outline-secondary">Search <i
+                            class="fas fa-search"></i></button>
+                </div>
         </form>
     </div>
 </div>
+
 
 {% endblock %}
 
 
 {% block product_content %}
 
-<div class="row justify-content-center">
+<div class="row justify-content-around row_products">
     {% for product in products %}
-    <div class="col-10 col-md-4 text-center">
-        <div class="display panel panel-default">
-            <div class="panel-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+    <div class="col-10 col-md-6 col-lg-4 text-center product_padding">
+        <div class="card">
+            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
-                <h3>{{ product.name }}</h3>
-                <p class="product-description">{{ product.description }}</p>
-                <p>{{ product.price }}</p>
+            <p><strong>{{ product.name }}</strong></p>
+            <p class="product-description">{{ product.description }}</p>
+            <p class="price">€ {{ product.price }}</p>
 
-                <form method="post" action="{% url 'add_to_cart' product.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control"
-                            placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
+            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Add</button>
+                    </span>
+                </div>
+            </form>
         </div>
-
     </div>
     {% endfor %}
 </div>
