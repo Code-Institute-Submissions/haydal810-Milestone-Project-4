@@ -20,7 +20,7 @@
 {% block search_bar %}
 
 <div class="row justify-content-center">
-    <div class="col-10 col-md-6 col-lg-4 center-block" >
+    <div class="col-10 col-md-6 col-lg-4 center-block">
         <form action="{% url 'search' %}" method="get">
             <div class="input-group mb-3">
                 <input class="form-control" type="text" name="q" placeholder="Search Products here...">
@@ -28,6 +28,7 @@
                     <button type="search" class="btn btn-outline-secondary">Search <i
                             class="fas fa-search"></i></button>
                 </div>
+            </div>
         </form>
     </div>
 </div>
@@ -51,7 +52,8 @@
             <form method="post" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
                 <div class="input-group">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" required="true">
+                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity"
+                        required="true">
                     <span class="input-group-btn">
                         <button class="btn btn-success" type="submit">Add</button>
                     </span>

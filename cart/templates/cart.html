@@ -11,7 +11,8 @@
     <!-- Return to Shop button only appears if cart has items in it -->
     {% if product_count > 0 %}
     <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
-        <a class="btn btn-info text-white" href="{% url 'all_products' %}" role="button">Keep Shopping!</a>
+        <h2 class="text-dark">Want to add for items to the Cart?</h2>
+        <a class="btn btn-info text-white" href="{% url 'all_products' %}" role="button">Return to Shop</a>
     </div>
     {% endif %}
     <!-- Mycart content -->
@@ -20,16 +21,16 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class="border-0 bg-light">
+                    <th scope="col" class="border-0 bg-light table_center">
                         <div class="p-2 px-3 text-uppercase">Product</div>
                     </th>
-                    <th scope="col" class="border-0 bg-light">
+                    <th scope="col" class="border-0 bg-light table_center">
                         <div class="py-2 text-uppercase">Price</div>
                     </th>
-                    <th scope="col" class="border-0 bg-light">
+                    <th scope="col" class="border-0 bg-light table_center">
                         <div class="py-2 text-uppercase">Quantity</div>
                     </th>
-                    <th scope="col" class="border-0 bg-light">
+                    <th scope="col" class="border-0 bg-light table_center">
                         <div class="py-2 text-uppercase">Amend Order</div>
                     </th>
                 </tr>
@@ -39,7 +40,7 @@
                 <!-- For Loop, runs through each item in Cart -->
                 {% for item in cart_items %}
                 <tr>
-                    <th scope="row" class="border-0">
+                    <th scope="row" class="border-0 table_left">
                         <div class="p-2">
                             <img src="{{ MEDIA_URL }}{{ item.product.image }}" alt="product" width="70"
                                 class="img-fluid rounded shadow-sm">
@@ -48,16 +49,16 @@
                             </div>
                         </div>
                     </th>
-                    <td class="border-0 align-middle"><strong>€ {{ item.product.price }}</strong></td>
-                    <td class="border-0 align-middle"><strong>{{item.quantity}}</strong></td>
-                    <td class="border-0 align-middle">
-                        <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                    <td class="border-0 align-middle table_center"><strong>€ {{ item.product.price }}</strong></td>
+                    <td class="border-0 align-middle table_center"><strong>{{item.quantity}}</strong></td>
+                    <td class="border-0 align-middle table_center">
+                        <form class="text-center border border-light p-2" method="post" action="{% url 'adjust_cart' item.id %}">
                             {% csrf_token %}
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label for="exampleInputAmount" class="sr-only">New Qty</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"></div>
-                                    <input name="quantity" type="number" min="0" max="999" class="form-control" required="true">
+                                    <input name="quantity" type="number" min="0" max="999" class="form-control" required="true" placeholder="Quantity">
                                     <div class="input-group-addon"></div>
                                 </div>
                             </div>

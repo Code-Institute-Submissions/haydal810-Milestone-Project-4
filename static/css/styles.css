@@ -218,6 +218,17 @@ caption p {
 
 /* cart section  */
 
+.table_center {
+    text-align:center;
+}
+
+/* small form in cart  */
+.form-control {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+
 
 
 
