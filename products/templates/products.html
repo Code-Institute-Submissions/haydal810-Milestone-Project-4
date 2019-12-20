@@ -1,50 +1,64 @@
-{% extends 'base.html' %}
+{% extends 'shop.html' %}
 {% load static from staticfiles %}
 
 {% load crispy_forms_tags %}
+
 <!-- Page title here -->
-{% block page_title %}Authentic Irish Sweaters | Products for Sale {% endblock %}
+{% block page_title %}Products for Sale {% endblock %}
+
 <!-- Page heading here -->
 {% block page_heading %}
-<div>
-    <p>Choose from a range of different Celtic designs</p>
+<div class="row justify-content-center">
+    <div class="col-10 centre_alignment col_content">
+        <!-- Page Headline, to identify to User the page they are on -->
+        <h2 class="text-dark">Choose from a range of different Celtic designs</h2>
+    </div>
 </div>
 {% endblock %}
 
 <!-- Search for Products here -->
 {% block search_bar %}
-<div class="search_bar">
-    <form action="{% url 'search' %}" method="get">
-        <input type="text" name="q" placeholder="Search Products here...">
-        <button type="search" class="btn btn-success btn-sm">SEARCH PRODUCTS</button>
-    </form>
+
+<div class="row justify-content-start">
+    <div class="col-8 col-md-4 text-center">
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="q" placeholder="Search Products here...">
+            <button type="search" class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
 </div>
+
 {% endblock %}
 
 
 {% block product_content %}
 
-<div class="">
+<div class="row justify-content-center">
     {% for product in products %}
-    <div class="display panel panel-default">
-        <div class="panel-body">
-            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+    <div class="col-10 col-md-4 text-center">
+        <div class="display panel panel-default">
+            <div class="panel-body">
+                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
-            <h3>{{ product.name }}</h3>
-            <p class="product-description">{{ product.description }}</p>
-            <p>{{ product.price }}</p>
+                <h3>{{ product.name }}</h3>
+                <p class="product-description">{{ product.description }}</p>
+                <p>{{ product.price }}</p>
 
-            <form method="post" action="{% url 'add_to_cart' product.id %}">
-                {% csrf_token %}
-                <div class="input-group">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Add</button>
-                    </span>
-                </div>
-            </form>
+                <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control"
+                            placeholder="Quantity">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
         </div>
+
     </div>
     {% endfor %}
 </div>
+
 {% endblock %}

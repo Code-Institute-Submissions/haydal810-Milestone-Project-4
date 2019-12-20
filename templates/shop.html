@@ -26,7 +26,8 @@
     <!-- Navbar, with if statements, depending if user is logged in or out -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="{% url 'index' %}">E | Store LOGO</a>
+        <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo-ms4.png' %}" width="" height=""
+                alt="logo"></a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +60,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{% url 'index' %}#about">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'all_products' %}">Shop</a>
@@ -75,42 +76,48 @@
                     <a class="nav-link" href="#">Product Reviews</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{% url 'index' %}#contact">Contact</a>
                 </li>
+                {% if request.user.is_superuser %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'admin:index' %}">Site Owner Login</a>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
 
-    <!-- First Row, with background image -->
-    <div class="container-fluid">
+
+    <!-- Container for Products for sale -->
+    <div class="container-fluid product_container">
+        <!-- Page Heading -->
+        {% block page_heading %}
+        {% endblock %}
+
         <!-- Row for search bar for products -->
-
         {% block search_bar %}
-        {% endblock %}
-
-
-        <!-- Row for Products -->
-
-        {% block product_content %}
-        {% endblock %}
-
-
-        <!-- Row for Cart -->
-
-        {% block cart_content %}
         {% endblock %}
 
     </div>
 
+    <!-- Row for Products -->
+    {% block product_content %}
+    {% endblock %}
+
+
+
+
+
+
+
+
+
 
 
     <!-- Row for Footer -->
-    <div class="row justify-content-center footer_opaque-overlay">
-        <div class="col-10 col-md-8 centre_alignment text-white col_content">
-            <footer class="page-footer font-small blue pt-4 text-white">
+    <div class="row justify-content-center footer">
+        <div class="col-10 col-md-8 centre_alignment text-dark col_content">
+            <footer class="page-footer font-small blue pt-4 text-dark">
 
                 <!-- Footer Links -->
                 <div class="container-fluid text-center text-md-left">
@@ -136,18 +143,20 @@
                             <!-- Links -->
                             <h5 class="text-uppercase">Follow Us</h5>
 
-                            <div class="list-unstyled text-white">
-                                <a class="text-white" href="https://www.facebook.com/" target="_blank"><i
+                            <div class="list-unstyled text-dark">
+                                <a class="text-dark" href="https://www.facebook.com/" target="_blank"><i
                                         class="fab fa-facebook-square fa-2x"></i></a>
-                                <a class="text-white" href="https://www.google.ie/" target="_blank"><i
+                                <a class="text-dark" href="https://www.google.ie/" target="_blank"><i
                                         class="fab fa-google-plus-square fa-2x"></i></a>
-                                <a class="text-white" href="https://www.instagram.com/explore/" target="_blank"><i
+                                <a class="text-dark" href="https://www.instagram.com/explore/" target="_blank"><i
                                         class="fab fa-instagram fa-2x"></i></a>
 
                             </div>
 
                         </div>
                         <!-- Grid column -->
+
+                        <hr class="clearfix w-100 d-md-none pb-3">
 
                         <!-- Grid column -->
                         <div class="col-md-3 mb-md-0 mb-3">
@@ -157,17 +166,17 @@
 
                             <ul class="list-unstyled">
                                 <li>
-                                    <a class="text-white" href="#">This is Ireland</a>
+                                    <a class="text-dark" href="#">This is Ireland</a>
                                 </li>
                                 <li>
-                                    <a class="text-white" href="#">South-west
+                                    <a class="text-dark" href="#">South-west
                                         Ireland</a>
                                 </li>
                                 <li>
-                                    <a class="text-white" href="#">Dublin, Ireland</a>
+                                    <a class="text-dark" href="#">Dublin, Ireland</a>
                                 </li>
                                 <li>
-                                    <a class="text-white" href="#">Discover
+                                    <a class="text-dark" href="#">Discover
                                         Ireland</a>
                                 </li>
                             </ul>
@@ -181,24 +190,21 @@
                 <!-- Footer Links -->
 
                 <!-- Copyright -->
-                <div class="footer-copyright text-center py-3 text-white">© 2019 Copyright:
-                    <a class="text-white" href="https://www.linkedin.com/in/david-hayden810/"> Dave Hayden<br></a>
+                <div class="footer-copyright text-center py-3 text-dark">© 2019 Copyright:
+                    <a class="text-dark" href="https://www.linkedin.com/in/david-hayden810/"> Dave Hayden<br></a>
                 </div>
                 <!-- Copyright -->
 
             </footer>
         </div>
     </div>
-
     <!-- Footer template borrowed from https://mdbootstrap.com/ -->
-
     <!-- End Footer -->
-
-
 
 </body>
 
-<!-- Optional JavaScript -->
+<!-- JavaScript -->
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -209,5 +215,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+
+<!-- Custom scripts for this template. Make sure this is included after the jQuery script, so it loads correctly -->
+<script src="{% static 'js/style.js' %}"></script>
 
 </html>

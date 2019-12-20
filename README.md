@@ -215,7 +215,7 @@ Credits:
 3.       Images - stocksnap.io, pexels
 4.       https://simpleisbetterthancomplex.com/tips/2016/09/06/django-tip-14-messages-framework.html
 5.       https://www.freelogodesign.org/
-6.       xxxxxxxxxxxxxxx
+6.       https://www.w3schools.com/ (product card)
 7.       yyyyyyyyyyyyyyyy
 8.       zzzzzzzzzzzzzzzz
 9.       111111111111111
