@@ -5,13 +5,18 @@
 
 {% block cart_content %}
 
-<div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
-        <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">RETURN TO SHOP</a>
-    </div>
-    <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
-        <!-- Mycart content -->
 
+<div class="row justify-content-center">
+    <!-- Return to Shop button Column -->
+    <!-- Return to Shop button only appears if cart has items in it -->
+    {% if product_count > 0 %}
+    <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
+        <a class="btn btn-info text-white" href="{% url 'all_products' %}" role="button">Keep Shopping!</a>
+    </div>
+    {% endif %}
+    <!-- Mycart content -->
+    <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
+        {% if product_count > 0 %}
         <table class="table">
             <thead>
                 <tr>
@@ -29,6 +34,7 @@
                     </th>
                 </tr>
             </thead>
+            <!-- Table populates only if items are in cart, otherwise only button appears -->
             <tbody>
                 <!-- For Loop, runs through each item in Cart -->
                 {% for item in cart_items %}
@@ -51,7 +57,7 @@
                                 <label for="exampleInputAmount" class="sr-only">New Qty</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"></div>
-                                    <input name="quantity" type="number" min="0" max="999" class="form-control">
+                                    <input name="quantity" type="number" min="0" max="999" class="form-control" required="true">
                                     <div class="input-group-addon"></div>
                                 </div>
                             </div>
@@ -61,7 +67,9 @@
                     </td>
                 </tr>
                 {% endfor %}
+
             </tbody>
+
         </table>
         <!-- Order Summary -->
         <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
@@ -76,6 +84,9 @@
             </ul><a href="/" class="btn btn-success text-white rounded-pill py-2 btn-block">Proceed to checkout</a>
         </div>
     </div>
+    {% else %}
+    <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">Cart Empty - Return to Shop</a>
+    {% endif %}
 </div>
 
 {% endblock %}
