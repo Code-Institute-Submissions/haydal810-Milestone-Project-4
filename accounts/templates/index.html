@@ -11,7 +11,8 @@
         <!-- Page Headline, to identify to User the page they are on -->
         <div class="jumbotron text-white">
             <h1 class="display-4">Welcome to the<br>Authentic Irish Sweaters Co.</h1>
-            <p class="lead">Vintage & modern Irish Aran Jumpers & Sweaters, made by local people, right here in Ireland.</p>
+            <p class="lead">Vintage & modern Irish Aran Jumpers & Sweaters, made by local people, right here in Ireland.
+            </p>
             <hr class="my-4 text-white">
             <p>What are you waiting for?<br>Check out our products for sale.<br>Hit the button below:</p>
             <p class="lead">
@@ -31,7 +32,10 @@
         <!-- Description of Injection -->
         <h2>About Us</h2>
         <p>
-            The Authentic Irish Sweater Co. was setup in 2010, in Glencar, Co. Kerry by local businessman Seamus O'Toole. His Jumpers & Sweaters are of a quintessential Irish design that perfectly compliments a smart or casual outfit. Seamus makes all his own clothing products, in the heart of the kingdom of Kerry, so you can be assured that you are buying a guarenteed Irish Product. 
+            The Authentic Irish Sweater Co. was setup in 2010, in Glencar, Co. Kerry by local businessman Seamus
+            O'Toole. His Jumpers & Sweaters are of a quintessential Irish design that perfectly compliments a smart or
+            casual outfit. Seamus makes all his own clothing products, in the heart of the kingdom of Kerry, so you can
+            be assured that you are buying a guarenteed Irish Product.
         </p>
     </div>
 </div>
@@ -41,10 +45,35 @@
 <!-- Featured Products Content -->
 {% block featured_content %}
 <div class="row justify-content-center bg_image_featured ">
-    <div class="col-10 col-md-6 centre_alignment col_content">
+    <div class="col-10 col-md-6 centre_alignment col_content center-block">
         <!-- Featured Products Injection -->
         <h2>Featured Products</h2>
-        <p>Featured Products to go here...</p>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                {% for product in products %}
+                <div class="item {% if forloop.counter == 1 %}active{% endif %}" id="slide{{ forloop.counter }}">
+                    <img src="{{ product.image }}">
+                    <div class="carousel-caption">
+                        <h4>{{ product.name }}</h4>
+                        <p class="price">€ {{ product.price }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
 </div>
 {% endblock %}
