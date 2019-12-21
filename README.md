@@ -217,7 +217,7 @@ Credits:
 5.       https://www.freelogodesign.org/ (quick logo design)
 6.       https://www.w3schools.com/ (product card template)
 7.       https://bootstrapious.com/ (shopping cart template)
-8.       zzzzzzzzzzzzzzzz
+8.       Images used from www.blarney.com (Product pics)
 9.       111111111111111
 
 ### Media
