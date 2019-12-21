@@ -57,41 +57,42 @@
             </tbody>
         </table>
     </div>
+</div>
 
-    <!-- Order Summary section in Checkout -->
-
+<!-- Order Summary section in Checkout -->
+<div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
         <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Checkout Summary </div>
         <div class="p-4">
             <p class="font-italic mb-4">Shipping and additional costs are included in Product Prices.
             </p>
             <ul class="list-unstyled mb-4">
-                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total Amount
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total
+                        Amount
                         to be charged</strong>
                     <h5 class="font-weight-bold">€ {{ total }}</h5>
                 </li>
             </ul>
         </div>
     </div>
+</div>
+<!-- Payment details fields -->
 
-    <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-4 active centre_alignment col_content">
         <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-            <legend class="">Payment Details</legend>
-
+            <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Payment Details</div>
             <div id="credit-card-errors" style="display: none;">
                 <div id="alert-message block-message error" id="stripe-error-message"></div>
             </div>
-
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 {{ order_form |crispy }}
             </div>
-
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 {{ payment_form |crispy }}
             </div>
-
             {% csrf_token %}
-            <div class="form-group col-md-12">
+            <div class="form-group">
                 <input class=" btn btn-success" id="submit_payment_btn" name="commit" type="submit"
                     value="Submit Payment">
             </div>
