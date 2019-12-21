@@ -93,8 +93,8 @@
         {% block cart_content %}
         {% endblock %}
 
-
-
+        {% block checkout_content %}
+        {% endblock %}
 
 
 
@@ -114,6 +114,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+
+<!-- This script will only be injected when user clicks to the checkout -->
+    {% block head_js %}
+    {% endblock head_js %}
 
 <!-- Custom scripts for this template. Make sure this is included after the jQuery script, so it loads correctly -->
 <script src="{% static 'js/style.js' %}"></script>

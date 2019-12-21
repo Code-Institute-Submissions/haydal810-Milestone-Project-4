@@ -1,0 +1,119 @@
+{% extends 'mycart_base.html' %}
+{% load static from staticfiles %}
+
+{% load crispy_forms_tags %}
+
+<!-- checkout block content -->
+
+{% block head_js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+
+<!-- js file for Stripe -->
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
+
+<!-- checkout block content, to be injected into mycart_base.html -->
+{% block checkout_content %}
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
+        <!-- Headings: Product, Price, Quantity -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="border-0 bg-light table_center">
+                        <div class="p-2 px-3 text-uppercase">Product</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light table_center">
+                        <div class="py-2 text-uppercase">Price</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light table_center">
+                        <div class="py-2 text-uppercase">Quantity</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- For Loop, runs through each item in Cart -->
+                {% for item in cart_items %}
+                <tr>
+                    <th scope="row" class="border-0 table_left">
+                        <div class="p-2">
+                            <img src="{{ MEDIA_URL }}{{ item.product.image }}" alt="product" width="70"
+                                class="img-fluid rounded shadow-sm">
+                            <div class="ml-3 d-inline-block align-middle">
+                                <h5 class="mb-0 text-dark d-inline-block align-middle">{{ item.product.name }}</h5>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="border-0 align-middle table_center"><strong>€ {{ item.product.price }}</strong></td>
+                    <td class="border-0 align-middle table_center"><strong>{{item.quantity}}</strong></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Order Summary section in Checkout -->
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
+        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Checkout Summary </div>
+        <div class="p-4">
+            <p class="font-italic mb-4">Shipping and additional costs are included in Product Prices.
+            </p>
+            <ul class="list-unstyled mb-4">
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total
+                        Amount
+                        to be charged</strong>
+                    <h5 class="font-weight-bold">€ {{ total }}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Payment details fields -->
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-4 active centre_alignment col_content">
+        <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+            <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Payment Details</div>
+            <div id="credit-card-errors" style="display: none;">
+                <div id="alert-message block-message error" id="stripe-error-message"></div>
+            </div>
+            <div class="form-group">
+                {{ order_form |crispy }}
+            </div>
+            <div class="form-group">
+                {{ payment_form |crispy }}
+            </div>
+            {% csrf_token %}
+            <div class="form-group">
+                <input class=" btn btn-success" id="submit_payment_btn" name="commit" type="submit"
+                    value="Submit Payment">
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- This row is for alert / error messages ONLY -->
+<div class="row justify-content-center message_row">
+    <div class="col-10 col-md-6 col-lg-4 centre_alignment">
+        <!-- Message for logging out / logging in -->
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
