@@ -214,9 +214,9 @@ Credits:
 2.       https://favicon.io/favicon-generator/
 3.       Images - stocksnap.io, pexels
 4.       https://simpleisbetterthancomplex.com/tips/2016/09/06/django-tip-14-messages-framework.html
-5.       https://www.freelogodesign.org/
-6.       https://www.w3schools.com/ (product card)
-7.       https://bootstrapious.com/ (shopping cart)
+5.       https://www.freelogodesign.org/ (quick logo design)
+6.       https://www.w3schools.com/ (product card template)
+7.       https://bootstrapious.com/ (shopping cart template)
 8.       zzzzzzzzzzzzzzzz
 9.       111111111111111
 
