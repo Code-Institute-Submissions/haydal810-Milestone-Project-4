@@ -44,16 +44,19 @@ def checkout(request):
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
+                return render(request,  'index.html')
             
             if customer.paid:
-                messages.error(request, "You have successfully paid")
+                messages.error(request, "You have successfully paid, your order is on it's way!")
                 request.session['cart'] = {}
-                return redirect(reverse('products'))
+                return render(request,  'index.html')
             else:
                 messages.error(request, "Unable to take payment")
+                return render(request,  'index.html')
         else:
             print(payment_form.errors)
             messages.error(request, "We were unable to take a payment with that card!")
+            return render(request,  'index.html')
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
