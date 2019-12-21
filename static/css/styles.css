@@ -162,6 +162,15 @@ caption p {
     margin: auto;
 }
 
+.col_content_featured {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    padding-top: 55px;
+    padding-bottom: 50px;
+    margin: auto;
+}
+
 .col_heading {
     padding-left: 20px;
     padding-right: 20px;

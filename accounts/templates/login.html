@@ -11,6 +11,7 @@
     <div class="col-6 centre_alignment col_content">
         <!-- Page Headline, to identify to User the page they are on -->
         <h2 class="text-white">User Login</h2>
+        <p class="text-white">User must be logged in to purchase Products</p>
     </div>
 </div>
 {% endblock %}
@@ -24,11 +25,22 @@
         <form method="POST" class="uniForm text-white">
             {% csrf_token %}
             {{ login_form|crispy }}
+            <button type="button" class="btn btn-danger "><a href="{% url 'password_reset' %}" class="text-white">I forgot
+                my password <i class="fas fa-frown"></i></a></button>
             <button type="submit" class="btn btn-success">Login <i class="fas fa-sign-in-alt"></i></button>
+            
         </form>
         <!-- Reset password button -->
-        <button type="button" class="btn btn-danger "><a href="{% url 'password_reset' %}" class="text-white">I forgot my password <i class="fas fa-frown"></i></a></button>
-
+        
     </div>
 </div>
+<div class="row justify-content-center">
+    <div class="col-10 col-md-10 centre_alignment">
+        <!-- Not logged in? Register here -->
+        <p class="text-white">Don't have an account? Register <a class="text-white"
+                href="{% url 'registration' %}">HERE</a></p>
+        </p>
+    </div>
+</div>
+
 {% endblock %}
