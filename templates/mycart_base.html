@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
     <!-- Navbar -->
     <!-- Navbar, with if statements, depending if user is logged in or out -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
@@ -42,6 +41,7 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <!-- If User is logged in, then these nav items appear in NavBar... -->
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
@@ -49,6 +49,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
+                <!-- If User is NOT logged in, then these nav items appear in NavBar instead -->
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'registration' %}">Register</a>
@@ -66,8 +67,10 @@
                     <a class="nav-link" href="{% url 'all_products' %}">Shop</a>
                 </li>
                 <li class="nav-item">
+                    <!-- If number of products in cart is greater than ZERO, the cart nav item appears in navbar, but if less than zero, cart does not appear -->
                     {% if product_count > 0 %}
                     <a class="nav-link" href="{% url 'view_cart' %}">MyCart <i class="fas fa-shopping-basket"></i>
+                        <!-- Shows number of products in cart, next to basket icon -->
                         {% if product_count > 0 %}
                         <label class="badge badge-primary">{{ product_count }}</label>
                         {% endif %}
@@ -77,6 +80,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'index' %}#contact_form_nav">Contact</a>
                 </li>
+                <!-- This Site Owner Login Nav-item only appears if the superuser is logged in -->
                 {% if request.user.is_superuser %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'admin:index' %}">Site Owner Login</a>
@@ -95,7 +99,6 @@
         <!-- Checkout block content Injection here -->
         {% block checkout_content %}
         {% endblock %}
-
     </div>
 </body>
 

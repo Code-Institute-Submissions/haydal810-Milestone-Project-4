@@ -44,11 +44,9 @@
     <div class="col-10 col-md-6 col-lg-4 text-center product_padding">
         <div class="card">
             <div class="product_shop" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-
             <p><strong>{{ product.name }}</strong></p>
             <p class="product-description">{{ product.description }}</p>
             <p class="price">€ {{ product.price }}</p>
-
             <form method="post" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
                 <div class="input-group">

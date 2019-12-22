@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
     <!-- Navbar -->
     <!-- Navbar, with if statements, depending if user is logged in or out -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
@@ -42,6 +41,7 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <!-- If User is logged in, then these nav items appear in NavBar... -->
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
@@ -49,6 +49,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
+                <!-- If User is NOT logged in, then these nav items appear in NavBar instead -->
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'registration' %}">Register</a>
@@ -66,8 +67,10 @@
                     <a class="nav-link" href="{% url 'all_products' %}">Shop</a>
                 </li>
                 <li class="nav-item">
+                    <!-- If number of products in cart is greater than ZERO, the cart nav item appears in navbar, but if less than zero, cart does not appear -->
                     {% if product_count > 0 %}
                     <a class="nav-link" href="{% url 'view_cart' %}">MyCart <i class="fas fa-shopping-basket"></i>
+                        <!-- Shows number of products in cart, next to basket icon -->
                         {% if product_count > 0 %}
                         <label class="badge badge-primary">{{ product_count }}</label>
                         {% endif %}
@@ -77,6 +80,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'index' %}#contact_form_nav">Contact</a>
                 </li>
+                <!-- This Site Owner Login Nav-item only appears if the superuser is logged in -->
                 {% if request.user.is_superuser %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'admin:index' %}">Site Owner Login</a>
@@ -85,7 +89,6 @@
             </ul>
         </div>
     </nav>
-
 
     <!-- Container for Heading & Search Bar -->
     <div class="container-fluid product_container">
@@ -103,100 +106,80 @@
         <!-- Row for Products -->
         {% block product_content %}
         {% endblock %}
-
     </div>
-    <!-- Row for Footer -->
-    <div class="row justify-content-center footer">
-        <div class="col-10 col-md-8 centre_alignment text-dark col_content">
-            <footer class="page-footer font-small blue pt-4 text-dark">
-
-                <!-- Footer Links -->
-                <div class="container-fluid text-center text-md-left">
-
-                    <!-- Grid row -->
-                    <div class="row">
-
-                        <!-- Grid column -->
-                        <div class="col-md-6 mt-md-0 mt-3">
-
-                            <!-- Content -->
-                            <h5 class="text-uppercase">Authentic Irish Sweaters E-Store</h5>
-                            <p>Buy a little piece of IRELAND...</p>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <hr class="clearfix w-100 d-md-none pb-3">
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-
-                            <!-- Links -->
-                            <h5 class="text-uppercase">Follow Us</h5>
-
-                            <div class="list-unstyled text-dark">
-                                <a class="text-dark" href="https://www.facebook.com/" target="_blank"><i
-                                        class="fab fa-facebook-square fa-2x"></i></a>
-                                <a class="text-dark" href="https://www.google.ie/" target="_blank"><i
-                                        class="fab fa-google-plus-square fa-2x"></i></a>
-                                <a class="text-dark" href="https://www.instagram.com/explore/" target="_blank"><i
-                                        class="fab fa-instagram fa-2x"></i></a>
-
+    <!-- Container for Footer -->
+    <div class="container-fluid">
+        <!-- Row for Footer -->
+        <div class="row justify-content-center footer">
+            <div class="col-10 col-md-8 centre_alignment text-dark col_content">
+                <footer class="page-footer font-small blue pt-4 text-dark">
+                    <!-- Footer Links -->
+                    <div class="container-fluid text-center text-md-left">
+                        <!-- Grid row -->
+                        <div class="row">
+                            <!-- Grid column -->
+                            <div class="col-md-6 mt-md-0 mt-3">
+                                <!-- Content -->
+                                <h5 class="text-uppercase">Authentic Irish Sweaters E-Store</h5>
+                                <p>Buy a little piece of IRELAND...</p>
                             </div>
-
+                            <!-- Grid column -->
+                            <hr class="clearfix w-100 d-md-none pb-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-md-0 mb-3">
+                                <!-- Links -->
+                                <h5 class="text-uppercase">Follow Us</h5>
+                                <div class="list-unstyled text-dark">
+                                    <a class="text-dark" href="https://www.facebook.com/" target="_blank"><i
+                                            class="fab fa-facebook-square fa-2x"></i></a>
+                                    <a class="text-dark" href="https://www.google.ie/" target="_blank"><i
+                                            class="fab fa-google-plus-square fa-2x"></i></a>
+                                    <a class="text-dark" href="https://www.instagram.com/explore/" target="_blank"><i
+                                            class="fab fa-instagram fa-2x"></i></a>
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                            <hr class="clearfix w-100 d-md-none pb-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-md-0 mb-3">
+                                <!-- Links -->
+                                <h5 class="text-uppercase">External Links</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="text-dark" href="#">This is Ireland</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-dark" href="#">South-west
+                                            Ireland</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-dark" href="#">Dublin, Ireland</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-dark" href="#">Discover
+                                            Ireland</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Grid column -->
                         </div>
-                        <!-- Grid column -->
-
-                        <hr class="clearfix w-100 d-md-none pb-3">
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-
-                            <!-- Links -->
-                            <h5 class="text-uppercase">External Links</h5>
-
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a class="text-dark" href="#">This is Ireland</a>
-                                </li>
-                                <li>
-                                    <a class="text-dark" href="#">South-west
-                                        Ireland</a>
-                                </li>
-                                <li>
-                                    <a class="text-dark" href="#">Dublin, Ireland</a>
-                                </li>
-                                <li>
-                                    <a class="text-dark" href="#">Discover
-                                        Ireland</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Grid column -->
-
+                        <!-- Grid row -->
                     </div>
-                    <!-- Grid row -->
-
-                </div>
-                <!-- Footer Links -->
-
-                <!-- Copyright -->
-                <div class="footer-copyright text-center py-3 text-dark">© 2019 Copyright:
-                    <a class="text-dark" href="https://www.linkedin.com/in/david-hayden810/" target="_blank"> Dave
-                        Hayden<br></a>
-                </div>
-                <!-- Copyright -->
-
-            </footer>
+                    <!-- Footer Links -->
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center py-3 text-dark">© 2019 Copyright:
+                        <a class="text-dark" href="https://www.linkedin.com/in/david-hayden810/" target="_blank"> Dave
+                            Hayden<br></a>
+                    </div>
+                    <!-- Copyright -->
+                </footer>
+            </div>
         </div>
+        <!-- Footer template borrowed from https://mdbootstrap.com/ -->
+        <!-- End Footer -->
     </div>
-    <!-- Footer template borrowed from https://mdbootstrap.com/ -->
-    <!-- End Footer -->
-
 </body>
-
 <!-- JavaScript -->
-
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

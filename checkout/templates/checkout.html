@@ -4,7 +4,6 @@
 {% load crispy_forms_tags %}
 
 <!-- checkout block content -->
-
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
@@ -76,8 +75,8 @@
         </div>
     </div>
 </div>
-<!-- Payment details fields -->
 
+<!-- Payment details fields -->
 <div class="row justify-content-center">
     <div class="col-md-8 col-lg-4 active centre_alignment col_content">
         <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
@@ -100,20 +99,4 @@
     </div>
 </div>
 
-<!-- This row is for alert / error messages ONLY -->
-<div class="row justify-content-center message_row">
-    <div class="col-10 col-md-6 col-lg-4 centre_alignment">
-        <!-- Message for logging out / logging in -->
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
-    </div>
-</div>
 {% endblock %}
