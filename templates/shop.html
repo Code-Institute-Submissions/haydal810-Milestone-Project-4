@@ -87,7 +87,7 @@
     </nav>
 
 
-    <!-- Container for Products for sale -->
+    <!-- Container for Heading & Search Bar -->
     <div class="container-fluid product_container">
         <!-- Page Heading -->
         {% block page_heading %}
@@ -98,21 +98,13 @@
         {% endblock %}
 
     </div>
+    <!-- Container for Products for sale -->
+    <div class="container-fluid product_container">
+        <!-- Row for Products -->
+        {% block product_content %}
+        {% endblock %}
 
-    <!-- Row for Products -->
-    {% block product_content %}
-    {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
+    </div>
     <!-- Row for Footer -->
     <div class="row justify-content-center footer">
         <div class="col-10 col-md-8 centre_alignment text-dark col_content">
@@ -197,7 +189,7 @@
             </footer>
         </div>
     </div>
-    <!-- Footer template borrowed from https://mdbootstrap.com/ -->
+    <!-- Footer template borrowed from https://mdbootstrap.com/, thank you. -->
     <!-- End Footer -->
 
 </body>
