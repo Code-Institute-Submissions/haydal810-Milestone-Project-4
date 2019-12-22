@@ -8,7 +8,7 @@
 
 <div class="row justify-content-center">
     <!-- Return to Shop button Column -->
-    <!-- Return to Shop button only appears if cart has items in it -->
+    <!-- Want to keep Shopping heading & button only appears if cart has items in it -->
     {% if product_count > 0 %}
     <div class="col-12 col-md-8 col-lg-10 centre_alignment col_content">
         <h2 class="text-dark">Want to keep shopping?</h2>
@@ -52,13 +52,15 @@
                     <td class="border-0 align-middle table_center"><strong>€ {{ item.product.price }}</strong></td>
                     <td class="border-0 align-middle table_center"><strong>{{item.quantity}}</strong></td>
                     <td class="border-0 align-middle table_center">
-                        <form class="text-center border border-light p-2" method="post" action="{% url 'adjust_cart' item.id %}">
+                        <form class="text-center border border-light p-2" method="post"
+                            action="{% url 'adjust_cart' item.id %}">
                             {% csrf_token %}
                             <div class="form-group mb-3">
                                 <label for="exampleInputAmount" class="sr-only">New Qty</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"></div>
-                                    <input name="quantity" type="number" min="0" max="999" class="form-control" required="true" placeholder="Quantity">
+                                    <input name="quantity" type="number" min="0" max="999" class="form-control"
+                                        required="true" placeholder="Quantity">
                                     <div class="input-group-addon"></div>
                                 </div>
                             </div>
@@ -82,11 +84,14 @@
                         Due</strong>
                     <h5 class="font-weight-bold">€ {{ total }}</h5>
                 </li>
-            </ul><a href="{% url 'checkout' %}" class="btn btn-success text-white rounded-pill py-2 btn-block">Proceed to checkout</a>
+            </ul><a href="{% url 'checkout' %}" class="btn btn-success text-white rounded-pill py-2 btn-block">Proceed
+                to checkout</a>
         </div>
+        {% else %}
+        <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">Cart Empty - Return to
+            Shop</a>
     </div>
-    {% else %}
-    <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">Cart Empty - Return to Shop</a>
+
     {% endif %}
 </div>
 

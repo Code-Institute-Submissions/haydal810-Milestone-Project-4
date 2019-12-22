@@ -218,7 +218,7 @@ Credits:
 6.       https://www.w3schools.com/ (product card template)
 7.       https://bootstrapious.com/ (shopping cart template)
 8.       Images used from www.blarney.com (Product pics)
-9.       111111111111111
+9.       Make a note that everytime u change a static file, you need to "python manage.py collectstatic"
 
 ### Media
 - The background image was sourced from Pexels (bg image), 
