@@ -18,6 +18,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img\favicon-32x32.png' %}">
     <!-- Page Title, with template injection -->
     <title>{% block page_title %}{% endblock %}</title>
+    <!-- EmailJS Script for Contact Form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_a20oZmpNd5WwAia1HV7NH");
+        })();
+    </script>
 </head>
 
 <body>
@@ -272,5 +280,6 @@
 
 <!-- Custom scripts for this template. Make sure this is included after the jQuery script, so it loads correctly -->
 <script src="{% static 'js/style.js' %}"></script>
-
+<!-- Custom scripts for EmailJS -->
+<script src="{% static 'js/sendEmail.js' %}"></script>
 </html>

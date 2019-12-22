@@ -85,7 +85,7 @@
     <div class="col-10 col-md-6 centre_alignment col_content">
         <!-- Contact Us Form -->
         <h2>Contact Us</h2>
-        <form>
+        <form onsubmit="return sendMail(this);" method="POST">
             <div class="form-row form-custom">
                 <label for="inputEmail">Email Address</label>
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
