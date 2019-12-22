@@ -157,15 +157,15 @@ Make note of the Travis setup for continous testing, and setting the Travis Envi
 ### User Testing
 
 #### Manual User testing:
-Item Description here
+This was the primary method of testing the application. People were asked to visit the website on a variety of devices, to setup accounts within the web store and to purchase items in the store. This feedback was very useful to determine any bugs that may have been present. I also tested the app manually myself on a varietly of browsers.
 
 
 ### Below are the list of Internet Browsers that were used to test the display of the website:
 
-1. Browser Description here
-2. Browser Description here
-3. Browser Description here
-4. Browser Description here
+1. Google Chrome (Version 77.0)
+2. Mozilla Firefox
+3. Microsoft Edge
+4. Internet Explorer 11
 
 Manual testing was carried out using the above browsers. No bugs or desplay issues could be identified. 
 
@@ -177,30 +177,31 @@ Manual testing was carried out using the above browsers. No bugs or desplay issu
 
 #### Meeting the needs of the user stories (as described in the UX section of this README file)
 
-#### As a new User to the web application, I want to be able to understand how to navigate around the web application.
+#### As a new User to the web application, I want to be able to view the range of products for sale in this store, online.
 
-Description here...
+If the User navigates their way to the "SHOP" Nav-Item, in the NavBar, they will be directed to the Shop, where all items are displayed.
 
-#### As a new User to the web application, I want to be able to ...
+#### As a new User to the web application, I want to be able to purchase these products, and pay for them online.
 
-Description here...
+When the user adds items to the cart, and proceeds to payment at the bottom of the MyCart page, they will be directed to the checkout page where they will be shown a summary of their products and payment details are taken below via the Stripe form.
 
+#### As a new User to the web application, I want to be able to easily navigate around the website.
 
-#### As a new User to the web application, I want to be able to ...
+The webstore has been setup so that there is no confusion when a user visits the site. The Nav bar is of a neutral color, the Nav items are clearly readable, the buttons are big, bright and visualy rich and simplistic.
 
-Description here...
+#### As a new User to the web application, I want to be able to add a product (or more than one) to a cart, but have the option to continue to look in the shop section, before I decide to pay.
 
-#### As a new User to the web application, I want to be able to ...
+In the MyCart section of the webstore, there is an option for the user to "amend" their quantity of their pre-purchased products. This can only be done from the MyCart section. 
 
-Description here...
+#### As a new User to the web application, I want to be able to search through the many items in the online store, to narrow down the items that are of interest to me.
 
+In the Shop section of the web store, the user can use the search bar at the top of the page, to narrow down the items, according the the keyword entered. If no keyword is entered, all products will be displayed. 
 
 ## Deployment
 
 ### Local Deployment
 
 This project was developed using the Visual Studio Code IDE, committed to git and pushed to GitHub using the built in function within Visual Studio Code.
-
 
 The GitHub Repository is here: https://github.com/haydal810/Milestone-Project-4
 The application is live here: https://milestone-project-4-estore.herokuapp.com/
