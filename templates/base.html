@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -29,7 +29,6 @@
 </head>
 
 <body>
-
     <!-- Navbar -->
     <!-- Navbar, with if statements, depending if user is logged in or out -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
@@ -107,7 +106,7 @@
                 <div class="col-10 col-md-6 col-lg-4 centre_alignment">
                     <!-- Message for logging out / logging in -->
                     {% if messages %}
-
+                    <!-- For Loop for messages that appear when triggered -->
                     {% for message in messages %}
                     <div class="alert {{ message.tags }} alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -116,157 +115,129 @@
                         {{ message }}
                     </div>
                     {% endfor %}
-
                     {% endif %}
                 </div>
-
             </div>
-
 
             <!-- Login / Register / My profile -->
             {% block content %}
             {% endblock %}
 
-            <!-- reset password form -->
+            <!-- Reset password form -->
             {% block reset_form %}
             {% endblock %}
 
         </div>
     </div>
 
-    <!-- Second container -->
+    <!-- Second Container for About Us / Featured Products / Contact Us -->
     <div class="container-fluid ">
         <!-- Row for About_Us block content -->
         {% block index_content %}
         {% endblock %}
 
         <!-- Row for Featured Products block content -->
-
         {% block featured_content %}
         {% endblock %}
 
         <!-- Row for Contact Us -->
-
         {% block contactus_content %}
         {% endblock %}
-
-
     </div>
 
+    <!-- Third Container for Footer -->
+    <div class="container-fluid ">
+        <!-- Row for Footer -->
+        <div class="row justify-content-center footer">
+            <div class="col-10 col-md-8 centre_alignment text-dark col_content">
+                <footer class="page-footer font-small blue pt-4 text-dark">
 
-    <!-- Row for search bar for products -->
+                    <!-- Footer Links -->
+                    <div class="container-fluid text-center text-md-left">
 
-    {% block search_bar %}
-    {% endblock %}
+                        <!-- Grid row -->
+                        <div class="row">
 
+                            <!-- Grid column -->
+                            <div class="col-md-6 mt-md-0 mt-3">
 
-    <!-- Row for Products -->
-
-    {% block product_content %}
-    {% endblock %}
-
-
-    <!-- Row for Cart -->
-
-    {% block cart_content %}
-    {% endblock %}
-
-
-
-
-
-
-    <!-- Row for Footer -->
-    <div class="row justify-content-center footer">
-        <div class="col-10 col-md-8 centre_alignment text-dark col_content">
-            <footer class="page-footer font-small blue pt-4 text-dark">
-
-                <!-- Footer Links -->
-                <div class="container-fluid text-center text-md-left">
-
-                    <!-- Grid row -->
-                    <div class="row">
-
-                        <!-- Grid column -->
-                        <div class="col-md-6 mt-md-0 mt-3">
-
-                            <!-- Content -->
-                            <h5 class="text-uppercase">Authentic Irish Sweaters E-Store</h5>
-                            <p>Buy a little piece of IRELAND...</p>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <hr class="clearfix w-100 d-md-none pb-3">
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-
-                            <!-- Links -->
-                            <h5 class="text-uppercase">Follow Us</h5>
-
-                            <div class="list-unstyled text-dark">
-                                <a class="text-dark" href="https://www.facebook.com/" target="_blank"><i
-                                        class="fab fa-facebook-square fa-2x"></i></a>
-                                <a class="text-dark" href="https://www.google.ie/" target="_blank"><i
-                                        class="fab fa-google-plus-square fa-2x"></i></a>
-                                <a class="text-dark" href="https://www.instagram.com/explore/" target="_blank"><i
-                                        class="fab fa-instagram fa-2x"></i></a>
+                                <!-- Content -->
+                                <h5 class="text-uppercase">Authentic Irish Sweaters E-Store</h5>
+                                <p>Buy a little piece of IRELAND...</p>
 
                             </div>
+                            <!-- Grid column -->
+
+                            <hr class="clearfix w-100 d-md-none pb-3">
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-md-0 mb-3">
+
+                                <!-- Links -->
+                                <h5 class="text-uppercase">Follow Us</h5>
+
+                                <div class="list-unstyled text-dark">
+                                    <a class="text-dark" href="https://www.facebook.com/" target="_blank"><i
+                                            class="fab fa-facebook-square fa-2x"></i></a>
+                                    <a class="text-dark" href="https://www.google.ie/" target="_blank"><i
+                                            class="fab fa-google-plus-square fa-2x"></i></a>
+                                    <a class="text-dark" href="https://www.instagram.com/explore/" target="_blank"><i
+                                            class="fab fa-instagram fa-2x"></i></a>
+
+                                </div>
+
+                            </div>
+                            <!-- Grid column -->
+
+                            <hr class="clearfix w-100 d-md-none pb-3">
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-md-0 mb-3">
+
+                                <!-- Links -->
+                                <h5 class="text-uppercase">External Links</h5>
+
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="text-dark" href="#">This is Ireland</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-dark" href="#">South-west
+                                            Ireland</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-dark" href="#">Dublin, Ireland</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-dark" href="#">Discover
+                                            Ireland</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Grid column -->
 
                         </div>
-                        <!-- Grid column -->
-
-                        <hr class="clearfix w-100 d-md-none pb-3">
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-
-                            <!-- Links -->
-                            <h5 class="text-uppercase">External Links</h5>
-
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a class="text-dark" href="#">This is Ireland</a>
-                                </li>
-                                <li>
-                                    <a class="text-dark" href="#">South-west
-                                        Ireland</a>
-                                </li>
-                                <li>
-                                    <a class="text-dark" href="#">Dublin, Ireland</a>
-                                </li>
-                                <li>
-                                    <a class="text-dark" href="#">Discover
-                                        Ireland</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Grid column -->
+                        <!-- Grid row -->
 
                     </div>
-                    <!-- Grid row -->
+                    <!-- Footer Links -->
 
-                </div>
-                <!-- Footer Links -->
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center py-3 text-dark">© 2019 Copyright:
+                        <a class="text-dark" href="https://www.linkedin.com/in/david-hayden810/" target="_blank"> Dave
+                            Hayden<br></a>
+                    </div>
+                    <!-- Copyright -->
 
-                <!-- Copyright -->
-                <div class="footer-copyright text-center py-3 text-dark">© 2019 Copyright:
-                    <a class="text-dark" href="https://www.linkedin.com/in/david-hayden810/" target="_blank"> Dave Hayden<br></a>
-                </div>
-                <!-- Copyright -->
-
-            </footer>
+                </footer>
+            </div>
         </div>
     </div>
     <!-- Footer template borrowed from https://mdbootstrap.com/ -->
     <!-- End Footer -->
-
 </body>
 
 <!-- JavaScript -->
-
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -282,4 +253,5 @@
 <script src="{% static 'js/style.js' %}"></script>
 <!-- Custom scripts for EmailJS -->
 <script src="{% static 'js/sendEmail.js' %}"></script>
+
 </html>
