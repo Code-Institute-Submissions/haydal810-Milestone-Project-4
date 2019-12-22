@@ -7,37 +7,36 @@
 <!-- Page heading here -->
 {% block page_heading %}
 <div class="row">
-    <div class="col-12 centre_alignment col_heading">
-        <!-- Page Headline, to identify to User the page they are on -->
-        <div class="jumbotron text-white">
-            <h1 class="display-4">Welcome to the<br>Authentic Irish Sweaters Co.</h1>
-            <p class="lead">Vintage & modern Irish Aran Jumpers & Sweaters, made by local people, right here in Ireland.
-            </p>
-            <hr class="my-4 text-white">
-            <p>What are you waiting for?<br>Check out our products for sale.<br>Hit the button below:</p>
-            <p class="lead">
-                <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">Browse
-                    Authentic
-                    Irish Products</a>
-            </p>
-        </div>
+  <div class="col-12 centre_alignment col_heading">
+    <!-- Page Headline, to identify to User the page they are on -->
+    <div class="jumbotron text-white">
+      <h1 class="display-4">Welcome to the<br>Authentic Irish Sweaters Co.</h1>
+      <p class="lead">Vintage & modern Irish Aran Jumpers & Sweaters, made by local people, right here in Ireland.
+      </p>
+      <p>What are you waiting for?<br>Check out our products for sale.<br>Hit the button below:</p>
+      <p class="lead">
+        <a class="btn btn-success text-white" href="{% url 'all_products' %}" role="button">Browse
+          Authentic
+          Irish Products</a>
+      </p>
     </div>
+  </div>
 </div>
 {% endblock %}
 
 <!-- About Us Content -->
 {% block index_content %}
 <div class="row justify-content-center" id="about">
-    <div class="col-10 col-md-4 centre_alignment col_content">
-        <!-- Description of Injection -->
-        <h2>About Us</h2>
-        <p>
-            The Authentic Irish Sweater Co. was setup in 2010, in Glencar, Co. Kerry by local businessman Seamus
-            O'Toole. His Jumpers & Sweaters are of a quintessential Irish design that perfectly compliments a smart or
-            casual outfit. Seamus makes all his own clothing products, in the heart of the kingdom of Kerry, so you can
-            be assured that you are buying a guarenteed Irish Product.
-        </p>
-    </div>
+  <div class="col-10 col-md-4 centre_alignment col_content">
+    <!-- Description of Injection -->
+    <h2>About Us</h2>
+    <p>
+      The Authentic Irish Sweater Co. was setup in 2010, in Glencar, Co. Kerry by local businessman Seamus
+      O'Toole. His Jumpers & Sweaters are of a quintessential Irish design that perfectly compliments a smart or
+      casual outfit. Seamus makes all his own clothing products, in the heart of the kingdom of Kerry, so you can
+      be assured that you are buying a guarenteed Irish Product.
+    </p>
+  </div>
 </div>
 {% endblock %}
 
@@ -45,101 +44,102 @@
 <!-- Featured Products Content -->
 {% block featured_content %}
 <div class="row justify-content-center bg_image_featured ">
-    <div class="col-10 col-md-6 centre_alignment col_content_featured center-block">
-        <!-- Featured Products Injection -->
-        <h2>Featured Products</h2>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="" src="{% static 'img/pic_1.JPG' %}" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="" src="{% static 'img/pic_2.JPG' %}" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="" src="{% static 'img/pic_3.JPG' %}" alt="Third slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-
+  <div class="col-10 col-md-6 centre_alignment col_content_featured center-block">
+    <!-- Featured Products Injection -->
+    <h2>Featured Products</h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="" src="{% static 'img/pic_1.JPG' %}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="" src="{% static 'img/pic_2.JPG' %}" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="" src="{% static 'img/pic_3.JPG' %}" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+
+  </div>
 </div>
 {% endblock %}
 
 <!-- Contact Us Content -->
 {% block contactus_content %}
 <div class="row justify-content-center" id="contact_form">
-    <div class="col-10 col-md-6 centre_alignment col_content">
-        <!-- Contact Us Form -->
-        <h2>Contact Us</h2>
-        <form onsubmit="return sendMail(this);" method="POST" id="contact_form">
-            <div class="form-row form-custom">
-                <label for="emailaddress">Email Address</label>
-                <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Email Address" required>
-            </div>
-            <div class="form-row form-custom">
-                <label for="full_name">Full Name</label>
-                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name" required>
-            </div>
-            <div class="form-row form-custom">
-                <label for="custom-select">Nature of Enquiry</label>
-                <select class="custom-select" id="nature_of_enquiry" name="nature_of_enquiry" required>
-                    <option value="">Select from Dropdown List</option>
-                    <option value="General Enquiry">General Enquiry</option>
-                    <option value="Delivery Information">Delivery Information</option>
-                    <option value="Product Information">Product Information</option>
-                    <option value="Payment Information">Payment Information</option>
-                    <option value="Advertise on this Website">Advertise on this Website</option>
-                </select>
-            </div>
-            <div class="form-row form-custom">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Type your Message here"
-                    required></textarea>
-            </div>
-            <div class="form-row form-custom">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1" required>
-                    <label class="custom-control-label" for="customCheck1">I am not a Robot</label>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Send message</button>
-        </form>
-    </div>
+  <div class="col-10 col-md-6 centre_alignment col_content">
+    <!-- Contact Us Form -->
+    <h2>Contact Us</h2>
+    <form onsubmit="return sendMail(this);" method="POST" id="contact_form">
+      <div class="form-row form-custom">
+        <label for="emailaddress">Email Address</label>
+        <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Email Address"
+          required>
+      </div>
+      <div class="form-row form-custom">
+        <label for="full_name">Full Name</label>
+        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name" required>
+      </div>
+      <div class="form-row form-custom">
+        <label for="custom-select">Nature of Enquiry</label>
+        <select class="custom-select" id="nature_of_enquiry" name="nature_of_enquiry" required>
+          <option value="">Select from Dropdown List</option>
+          <option value="General Enquiry">General Enquiry</option>
+          <option value="Delivery Information">Delivery Information</option>
+          <option value="Product Information">Product Information</option>
+          <option value="Payment Information">Payment Information</option>
+          <option value="Advertise on this Website">Advertise on this Website</option>
+        </select>
+      </div>
+      <div class="form-row form-custom">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Type your Message here"
+          required></textarea>
+      </div>
+      <div class="form-row form-custom">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+          <label class="custom-control-label" for="customCheck1">I am not a Robot</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message</button>
+    </form>
+  </div>
 </div>
 
 <!-- Modal feedback to User after "Send Message" button is hit -->
 <div class="modal fade" id="modalMessage" tabindex="-1" role="dialog" aria-labelledby="modalMessageLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="modalMessageLabel">The Authentic Irish Sweaters Co.</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      Your message was sent successfully!
-      We will be in touch shortly.
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalMessageLabel">The Authentic Irish Sweaters Co.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your message was sent successfully!
+        We will be in touch shortly.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
-</div>
 </div>
 {% endblock %}
