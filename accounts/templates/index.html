@@ -84,7 +84,7 @@
   <div class="col-10 col-md-6 centre_alignment col_content">
     <!-- Contact Us Form -->
     <h2>Contact Us</h2>
-    <form onsubmit="return sendMail(this);" method="POST" id="contact_form">
+    <form onsubmit="return sendMail(this);" method="POST" name="contact_form" id="contact_form">
       <div class="form-row form-custom">
         <label for="emailaddress">Email Address</label>
         <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Email Address"
@@ -136,7 +136,7 @@
         Your message was sent successfully!<br>We will be in touch shortly.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="{% url 'index' %}">Close</a></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
