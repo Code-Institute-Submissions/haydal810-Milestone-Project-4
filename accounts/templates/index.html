@@ -81,22 +81,22 @@
 
 <!-- Contact Us Content -->
 {% block contactus_content %}
-<div class="row justify-content-center" id="contact">
+<div class="row justify-content-center" id="contact_form">
     <div class="col-10 col-md-6 centre_alignment col_content">
         <!-- Contact Us Form -->
         <h2>Contact Us</h2>
         <form onsubmit="return sendMail(this);" method="POST">
             <div class="form-row form-custom">
-                <label for="inputEmail">Email Address</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+                <label for="emailaddress">Email Address</label>
+                <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Email Address" required>
             </div>
             <div class="form-row form-custom">
-                <label for="inputFullName">Full Name</label>
-                <input type="text" class="form-control" id="inputFullName" placeholder="Full Name" required>
+                <label for="full_name">Full Name</label>
+                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name" required>
             </div>
             <div class="form-row form-custom">
-                <label for="inputAreaofInterest">Nature of Enquiry</label>
-                <select id="inputAreaofInterest" class="custom-select" required>
+                <label for="custom-select">Nature of Enquiry</label>
+                <select class="custom-select" id="nature_of_enquiry" name="nature_of_enquiry" required>
                     <option value="">Select from Dropdown List</option>
                     <option value="1">General Enquiry</option>
                     <option value="2">Delivery Information</option>
@@ -106,8 +106,8 @@
                 </select>
             </div>
             <div class="form-row form-custom">
-                <label for="messagearea">Message</label>
-                <textarea class="form-control" id="messagearea" rows="6" placeholder="Type your Message here"
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Type your Message here"
                     required></textarea>
             </div>
             <div class="form-row form-custom">
@@ -119,5 +119,27 @@
             <button type="submit" class="btn btn-primary">Send message</button>
         </form>
     </div>
+</div>
+
+<!-- Modal feedback to User after "Send Message" button is hit -->
+<div class="modal fade" id="modalMessage" tabindex="-1" role="dialog" aria-labelledby="modalMessageLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="modalMessageLabel">The Authentic Irish Sweaters Co.</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Your message was sent successfully!
+      We will be in touch shortly.
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
 </div>
 {% endblock %}
